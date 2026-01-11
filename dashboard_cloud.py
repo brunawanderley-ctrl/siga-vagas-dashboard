@@ -604,22 +604,49 @@ for i, tab in enumerate(tabs):
             df_turmas = pd.DataFrame(unidade_vagas['turmas'])
             df_turmas = df_turmas[['segmento', 'turma', 'vagas', 'novatos', 'veteranos', 'matriculados', 'disponiveis']]
             df_turmas['ocupacao'] = round(df_turmas['matriculados'] / df_turmas['vagas'] * 100, 1)
-            df_turmas.columns = ['Segmento', 'Turma', 'Vagas', 'Novatos', 'Veteranos', 'Matriculados', 'Disponíveis', 'Ocupação %']
 
-            # Função para colorir ocupação
-            def colorir_ocupacao(val):
+            # Status baseado na ocupação
+            def get_status(ocup):
+                if ocup >= 90: return '🔥 Excelente'
+                elif ocup >= 80: return '✨ Muito Bom'
+                elif ocup >= 70: return '⚡ Bom'
+                elif ocup >= 60: return '⚠️ Atenção'
+                else: return '❄️ Crítico'
+
+            df_turmas['status'] = df_turmas['ocupacao'].apply(get_status)
+            df_turmas.columns = ['Segmento', 'Turma', 'Vagas', 'Novatos', 'Veteranos', 'Matriculados', 'Disponíveis', 'Ocupação %', 'Status']
+
+            # Reordenar colunas
+            df_turmas = df_turmas[['Segmento', 'Turma', 'Vagas', 'Novatos', 'Veteranos', 'Matriculados', 'Disponíveis', 'Ocupação %', 'Status']]
+
+            # Função para criar barra de ocupação
+            def barra_ocupacao(val):
                 if val >= 90:
-                    return 'background-color: #22c55e; color: white'
+                    cor = '#22c55e'
                 elif val >= 80:
-                    return 'background-color: #84cc16; color: white'
+                    cor = '#84cc16'
                 elif val >= 70:
-                    return 'background-color: #fbbf24; color: black'
+                    cor = '#fbbf24'
                 elif val >= 60:
-                    return 'background-color: #f97316; color: white'
+                    cor = '#f97316'
                 else:
-                    return 'background-color: #ef4444; color: white'
+                    cor = '#ef4444'
+                return f'background: linear-gradient(90deg, {cor} {val}%, transparent {val}%); color: white; font-weight: bold;'
 
-            styled_df = df_turmas.style.applymap(colorir_ocupacao, subset=['Ocupação %'])
+            # Função para colorir status
+            def colorir_status(val):
+                if 'Excelente' in val:
+                    return 'color: #22c55e; font-weight: bold;'
+                elif 'Muito Bom' in val:
+                    return 'color: #84cc16; font-weight: bold;'
+                elif 'Bom' in val:
+                    return 'color: #fbbf24; font-weight: bold;'
+                elif 'Atenção' in val:
+                    return 'color: #f97316; font-weight: bold;'
+                else:
+                    return 'color: #ef4444; font-weight: bold;'
+
+            styled_df = df_turmas.style.map(barra_ocupacao, subset=['Ocupação %']).map(colorir_status, subset=['Status'])
             st.dataframe(styled_df, use_container_width=True, hide_index=True)
 
 # Footer
