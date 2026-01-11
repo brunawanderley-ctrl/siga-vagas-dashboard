@@ -488,16 +488,42 @@ st.markdown("<br>", unsafe_allow_html=True)
 if num_extracoes >= 2:
     st.markdown("### 📈 Evolução Histórica")
 
+    # Filtro de período
+    col_periodo1, col_periodo2, col_periodo3 = st.columns([1, 1, 2])
+
+    with col_periodo1:
+        if not df_hist_total.empty:
+            data_min = df_hist_total['data_extracao'].min().date()
+            data_max = df_hist_total['data_extracao'].max().date()
+            data_inicio = st.date_input("Data Início", value=data_min, min_value=data_min, max_value=data_max, key="hist_inicio")
+
+    with col_periodo2:
+        if not df_hist_total.empty:
+            data_fim = st.date_input("Data Fim", value=data_max, min_value=data_min, max_value=data_max, key="hist_fim")
+
+    with col_periodo3:
+        st.markdown(f"<p style='color: #64748b; margin-top: 2rem;'>📅 Período: {data_inicio.strftime('%d/%m/%Y')} a {data_fim.strftime('%d/%m/%Y')}</p>", unsafe_allow_html=True)
+
+    # Filtra dados pelo período selecionado
+    df_hist_total_filtrado = df_hist_total[
+        (df_hist_total['data_extracao'].dt.date >= data_inicio) &
+        (df_hist_total['data_extracao'].dt.date <= data_fim)
+    ]
+    df_hist_unidades_filtrado = df_hist_unidades[
+        (df_hist_unidades['data_extracao'].dt.date >= data_inicio) &
+        (df_hist_unidades['data_extracao'].dt.date <= data_fim)
+    ]
+
     tab1, tab2 = st.tabs(["Visão Geral", "Por Unidade"])
 
     with tab1:
-        df_hist_total['ocupacao'] = round(df_hist_total['matriculados'] / df_hist_total['vagas'] * 100, 1)
+        df_hist_total_filtrado['ocupacao'] = round(df_hist_total_filtrado['matriculados'] / df_hist_total_filtrado['vagas'] * 100, 1)
 
         fig_hist = go.Figure()
 
         fig_hist.add_trace(go.Scatter(
-            x=df_hist_total['data_formatada'],
-            y=df_hist_total['ocupacao'],
+            x=df_hist_total_filtrado['data_formatada'],
+            y=df_hist_total_filtrado['ocupacao'],
             mode='lines+markers',
             name='Ocupação',
             line=dict(color=COLORS['primary'], width=3),
@@ -522,8 +548,8 @@ if num_extracoes >= 2:
         fig_unid = go.Figure()
         cores_unid = [COLORS['primary'], COLORS['accent'], COLORS['info'], '#60a5fa']
 
-        for i, unidade in enumerate(df_hist_unidades['unidade_nome'].unique()):
-            df_u = df_hist_unidades[df_hist_unidades['unidade_nome'] == unidade]
+        for i, unidade in enumerate(df_hist_unidades_filtrado['unidade_nome'].unique()):
+            df_u = df_hist_unidades_filtrado[df_hist_unidades_filtrado['unidade_nome'] == unidade]
             nome = unidade.split('(')[1].replace(')', '') if '(' in unidade else unidade
 
             fig_unid.add_trace(go.Scatter(
@@ -540,8 +566,111 @@ if num_extracoes >= 2:
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# Análise por Segmento
-st.markdown("### 📊 Análise por Segmento")
+# Filtro por Segmento (todas unidades)
+st.markdown("### 🎯 Filtro por Segmento")
+
+col_seg_filter, col_search = st.columns([1, 2])
+
+with col_seg_filter:
+    segmentos_disponiveis = ['Ed. Infantil', 'Fund. I', 'Fund. II', 'Ens. Médio']
+    segmento_filtro = st.selectbox("Selecione o Segmento", segmentos_disponiveis, key="filtro_segmento")
+
+with col_search:
+    busca_turma = st.text_input("🔍 Buscar Turma", placeholder="Digite o nome da turma...", key="busca_turma")
+
+# Dados do segmento selecionado em todas as unidades
+dados_segmento_todas = []
+for unidade in resumo['unidades']:
+    nome_unidade = unidade['nome'].split('(')[1].replace(')', '') if '(' in unidade['nome'] else unidade['nome']
+    if segmento_filtro in unidade['segmentos']:
+        seg_data = unidade['segmentos'][segmento_filtro]
+        disponíveis = seg_data['vagas'] - seg_data['matriculados']
+        ocup = round(seg_data['matriculados'] / seg_data['vagas'] * 100, 1) if seg_data['vagas'] > 0 else 0
+
+        if ocup >= 90: status = '🔥 Excelente'
+        elif ocup >= 80: status = '✨ Muito Bom'
+        elif ocup >= 70: status = '⚡ Bom'
+        elif ocup >= 50: status = '⚠️ Atenção'
+        else: status = '❄️ Crítico'
+
+        # Calcula pré-matriculados
+        unidade_vagas_data = next((u for u in vagas['unidades'] if u['codigo'] == unidade['codigo']), None)
+        pre_matr = sum(t['pre_matriculados'] for t in unidade_vagas_data['turmas'] if t['segmento'] == segmento_filtro) if unidade_vagas_data else 0
+
+        dados_segmento_todas.append({
+            'Unidade': nome_unidade,
+            'Vagas': seg_data['vagas'],
+            'Novatos': seg_data['novatos'],
+            'Veteranos': seg_data['veteranos'],
+            'Matriculados': seg_data['matriculados'],
+            'Disponíveis': disponíveis,
+            'Ocupação %': ocup,
+            'Status': status,
+            'Pré-Matr.': pre_matr
+        })
+
+df_seg_todas = pd.DataFrame(dados_segmento_todas)
+
+# Estilização
+def barra_ocup_todas(val):
+    if val >= 90: cor = '#22c55e'
+    elif val >= 80: cor = '#84cc16'
+    elif val >= 70: cor = '#fbbf24'
+    elif val >= 50: cor = '#f97316'
+    else: cor = '#ef4444'
+    return f'background: linear-gradient(90deg, {cor} {val}%, transparent {val}%); color: white; font-weight: bold;'
+
+def colorir_status_todas(val):
+    base = 'font-weight: 600; font-family: "SF Pro Display", system-ui, sans-serif; letter-spacing: 0.5px; text-transform: uppercase; font-size: 11px;'
+    if 'Excelente' in val: return f'{base} color: #22c55e;'
+    elif 'Muito Bom' in val: return f'{base} color: #84cc16;'
+    elif 'Bom' in val: return f'{base} color: #fbbf24;'
+    elif 'Atenção' in val: return f'{base} color: #f97316;'
+    else: return f'{base} color: #ef4444;'
+
+st.markdown(f"**{segmento_filtro}** em todas as unidades:")
+styled_seg_todas = df_seg_todas.style.map(barra_ocup_todas, subset=['Ocupação %']).map(colorir_status_todas, subset=['Status'])
+st.dataframe(styled_seg_todas, use_container_width=True, hide_index=True)
+
+# Busca de turmas
+if busca_turma:
+    st.markdown(f"### 🔍 Resultados para: *{busca_turma}*")
+    turmas_encontradas = []
+    for unidade in vagas['unidades']:
+        nome_unidade = unidade['nome'].split('(')[1].replace(')', '') if '(' in unidade['nome'] else unidade['nome']
+        for turma in unidade['turmas']:
+            if busca_turma.lower() in turma['turma'].lower():
+                disponíveis = turma['vagas'] - turma['matriculados']
+                ocup = round(turma['matriculados'] / turma['vagas'] * 100, 1) if turma['vagas'] > 0 else 0
+
+                if ocup >= 90: status = '🔥 Excelente'
+                elif ocup >= 80: status = '✨ Muito Bom'
+                elif ocup >= 70: status = '⚡ Bom'
+                elif ocup >= 50: status = '⚠️ Atenção'
+                else: status = '❄️ Crítico'
+
+                turmas_encontradas.append({
+                    'Unidade': nome_unidade,
+                    'Segmento': turma['segmento'],
+                    'Turma': turma['turma'],
+                    'Vagas': turma['vagas'],
+                    'Matriculados': turma['matriculados'],
+                    'Disponíveis': disponíveis,
+                    'Ocupação %': ocup,
+                    'Status': status
+                })
+
+    if turmas_encontradas:
+        df_busca = pd.DataFrame(turmas_encontradas)
+        styled_busca = df_busca.style.map(barra_ocup_todas, subset=['Ocupação %']).map(colorir_status_todas, subset=['Status'])
+        st.dataframe(styled_busca, use_container_width=True, hide_index=True)
+    else:
+        st.info(f"Nenhuma turma encontrada com '{busca_turma}'")
+
+st.markdown("<br>", unsafe_allow_html=True)
+
+# Análise por Segmento (por unidade)
+st.markdown("### 📊 Análise por Unidade")
 
 col_select, col_empty = st.columns([1, 2])
 with col_select:
