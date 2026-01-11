@@ -572,6 +572,79 @@ with col6:
 
 st.markdown("<br>", unsafe_allow_html=True)
 
+# Alertas de Turmas
+todas_turmas_alerta = []
+for unidade in vagas['unidades']:
+    nome_unidade = unidade['nome'].split('(')[1].replace(')', '') if '(' in unidade['nome'] else unidade['nome']
+    for turma in unidade['turmas']:
+        ocup = round(turma['matriculados'] / turma['vagas'] * 100, 1) if turma['vagas'] > 0 else 0
+        todas_turmas_alerta.append({
+            'unidade': nome_unidade,
+            'segmento': turma['segmento'],
+            'turma': turma['turma'],
+            'vagas': turma['vagas'],
+            'matriculados': turma['matriculados'],
+            'disponiveis': turma['vagas'] - turma['matriculados'],
+            'ocupacao': ocup
+        })
+
+# Turmas críticas (< 50%) e quase lotadas (>= 95%)
+turmas_criticas = sorted([t for t in todas_turmas_alerta if t['ocupacao'] < 50], key=lambda x: x['ocupacao'])[:5]
+turmas_lotadas = sorted([t for t in todas_turmas_alerta if t['ocupacao'] >= 95], key=lambda x: -x['ocupacao'])[:5]
+
+if turmas_criticas or turmas_lotadas:
+    col_alert1, col_alert2 = st.columns(2)
+
+    with col_alert1:
+        if turmas_criticas:
+            st.markdown("""
+                <div style='background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(239, 68, 68, 0.05) 100%);
+                            border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 1rem;'>
+                    <h4 style='color: #ef4444; margin: 0 0 0.5rem 0;'>❄️ Turmas Críticas (< 50%)</h4>
+            """, unsafe_allow_html=True)
+            for t in turmas_criticas:
+                st.markdown(f"""
+                    <div style='background: rgba(0,0,0,0.2); border-radius: 8px; padding: 0.5rem; margin: 0.3rem 0;'>
+                        <span style='color: #ef4444; font-weight: bold;'>{t['ocupacao']}%</span>
+                        <span style='color: #94a3b8;'> • {t['unidade']} • {t['segmento']}</span><br>
+                        <span style='color: #fff; font-size: 0.85rem;'>{t['turma'][:50]}...</span>
+                    </div>
+                """, unsafe_allow_html=True)
+            st.markdown("</div>", unsafe_allow_html=True)
+        else:
+            st.markdown("""
+                <div style='background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3);
+                            border-radius: 12px; padding: 1rem; text-align: center;'>
+                    <span style='color: #22c55e; font-size: 1.2rem;'>✅ Nenhuma turma crítica!</span>
+                </div>
+            """, unsafe_allow_html=True)
+
+    with col_alert2:
+        if turmas_lotadas:
+            st.markdown("""
+                <div style='background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(34, 197, 94, 0.05) 100%);
+                            border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 12px; padding: 1rem;'>
+                    <h4 style='color: #22c55e; margin: 0 0 0.5rem 0;'>🔥 Turmas Quase Lotadas (≥ 95%)</h4>
+            """, unsafe_allow_html=True)
+            for t in turmas_lotadas:
+                st.markdown(f"""
+                    <div style='background: rgba(0,0,0,0.2); border-radius: 8px; padding: 0.5rem; margin: 0.3rem 0;'>
+                        <span style='color: #22c55e; font-weight: bold;'>{t['ocupacao']}%</span>
+                        <span style='color: #94a3b8;'> • {t['unidade']} • {t['segmento']}</span><br>
+                        <span style='color: #fff; font-size: 0.85rem;'>{t['turma'][:50]}...</span>
+                    </div>
+                """, unsafe_allow_html=True)
+            st.markdown("</div>", unsafe_allow_html=True)
+        else:
+            st.markdown("""
+                <div style='background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.3);
+                            border-radius: 12px; padding: 1rem; text-align: center;'>
+                    <span style='color: #fbbf24; font-size: 1.2rem;'>📊 Nenhuma turma lotada ainda</span>
+                </div>
+            """, unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
 # Gráficos principais
 col_left, col_right = st.columns(2)
 
