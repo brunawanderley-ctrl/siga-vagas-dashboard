@@ -440,7 +440,12 @@ with col_right:
     ))
 
     fig2.update_layout(
-        **PLOTLY_LAYOUT,
+        paper_bgcolor=PLOTLY_LAYOUT['paper_bgcolor'],
+        plot_bgcolor=PLOTLY_LAYOUT['plot_bgcolor'],
+        font=PLOTLY_LAYOUT['font'],
+        margin=PLOTLY_LAYOUT['margin'],
+        xaxis=PLOTLY_LAYOUT['xaxis'],
+        yaxis=PLOTLY_LAYOUT['yaxis'],
         barmode='group',
         height=350,
         legend=dict(
@@ -448,7 +453,9 @@ with col_right:
             yanchor='bottom',
             y=1.02,
             xanchor='right',
-            x=1
+            x=1,
+            bgcolor='rgba(0,0,0,0)',
+            font=dict(color='#94a3b8')
         )
     )
 
@@ -564,10 +571,13 @@ for i, tab in enumerate(tabs):
                 marker_colors=[COLORS['info'], COLORS['primary']]
             )])
             fig_pie.update_layout(
-                **PLOTLY_LAYOUT,
+                paper_bgcolor=PLOTLY_LAYOUT['paper_bgcolor'],
+                plot_bgcolor=PLOTLY_LAYOUT['plot_bgcolor'],
+                font=PLOTLY_LAYOUT['font'],
+                margin=PLOTLY_LAYOUT['margin'],
                 height=280,
                 showlegend=True,
-                legend=dict(orientation='h', yanchor='bottom', y=-0.2)
+                legend=dict(orientation='h', yanchor='bottom', y=-0.2, bgcolor='rgba(0,0,0,0)', font=dict(color='#94a3b8'))
             )
             st.plotly_chart(fig_pie, use_container_width=True)
 
