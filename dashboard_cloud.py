@@ -602,7 +602,9 @@ for i, tab in enumerate(tabs):
 
         with st.expander("📋 Ver todas as turmas"):
             df_turmas = pd.DataFrame(unidade_vagas['turmas'])
-            df_turmas = df_turmas[['segmento', 'turma', 'vagas', 'novatos', 'veteranos', 'matriculados', 'disponiveis']]
+            df_turmas = df_turmas[['segmento', 'turma', 'vagas', 'novatos', 'veteranos', 'matriculados']]
+            # Calcula disponíveis corretamente
+            df_turmas['disponiveis'] = df_turmas['vagas'] - df_turmas['matriculados']
             df_turmas['ocupacao'] = round(df_turmas['matriculados'] / df_turmas['vagas'] * 100, 1)
 
             # Status baseado na ocupação
