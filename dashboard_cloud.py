@@ -19,12 +19,12 @@ st.set_page_config(
 
 BASE_DIR = Path(__file__).parent
 
-# CSS Premium Dark Mode
+# CSS Corporate SaaS Dark Mode - Navy Blue
 st.markdown("""
 <style>
-    /* Dark theme base */
+    /* Dark theme - Navy blue base */
     .stApp {
-        background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+        background: linear-gradient(180deg, #0a1628 0%, #0f2137 50%, #132743 100%);
     }
 
     /* Main container */
@@ -41,24 +41,21 @@ st.markdown("""
 
     h1 {
         font-size: 2.5rem !important;
-        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: #ffffff !important;
     }
 
     /* Metric cards */
     [data-testid="stMetric"] {
-        background: linear-gradient(145deg, #1e1e30 0%, #252540 100%);
-        border: 1px solid rgba(102, 126, 234, 0.2);
+        background: linear-gradient(145deg, #0d1f35 0%, #142d4c 100%);
+        border: 1px solid rgba(59, 130, 246, 0.2);
         border-radius: 16px;
         padding: 1.5rem;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     }
 
     [data-testid="stMetric"] label {
-        color: #a0a0b0 !important;
-        font-size: 0.9rem !important;
+        color: #94a3b8 !important;
+        font-size: 0.85rem !important;
         text-transform: uppercase;
         letter-spacing: 1px;
     }
@@ -70,12 +67,13 @@ st.markdown("""
     }
 
     [data-testid="stMetric"] [data-testid="stMetricDelta"] {
-        color: #4ade80 !important;
+        color: #22c55e !important;
     }
 
     /* Tabs */
     .stTabs [data-baseweb="tab-list"] {
-        background: rgba(30, 30, 48, 0.8);
+        background: rgba(15, 33, 55, 0.9);
+        border: 1px solid rgba(59, 130, 246, 0.15);
         border-radius: 12px;
         padding: 0.5rem;
         gap: 0.5rem;
@@ -83,117 +81,115 @@ st.markdown("""
 
     .stTabs [data-baseweb="tab"] {
         background: transparent;
-        color: #a0a0b0;
+        color: #94a3b8;
         border-radius: 8px;
         padding: 0.75rem 1.5rem;
         font-weight: 500;
     }
 
     .stTabs [aria-selected="true"] {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #1e4976 0%, #2563eb 100%);
         color: white !important;
     }
 
     /* Expander */
     .streamlit-expanderHeader {
-        background: rgba(30, 30, 48, 0.8);
+        background: rgba(15, 33, 55, 0.9);
+        border: 1px solid rgba(59, 130, 246, 0.15);
         border-radius: 12px;
         color: #ffffff;
     }
 
     /* Dataframe */
     .stDataFrame {
-        background: rgba(30, 30, 48, 0.8);
+        background: rgba(15, 33, 55, 0.9);
         border-radius: 12px;
     }
 
     /* Divider */
     hr {
-        border-color: rgba(102, 126, 234, 0.2);
+        border-color: rgba(59, 130, 246, 0.15);
     }
 
     /* Caption */
     .stCaption {
-        color: #606080 !important;
+        color: #64748b !important;
     }
 
     /* Button */
     .stButton > button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #1e4976 0%, #2563eb 100%);
         color: white;
         border: none;
         border-radius: 12px;
         padding: 0.75rem 2rem;
         font-weight: 600;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
     }
 
     .stButton > button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
     }
 
     /* Info box */
     .stAlert {
-        background: rgba(102, 126, 234, 0.1);
-        border: 1px solid rgba(102, 126, 234, 0.3);
+        background: rgba(37, 99, 235, 0.1);
+        border: 1px solid rgba(37, 99, 235, 0.25);
         border-radius: 12px;
     }
 
-    /* Plotly charts dark theme */
+    /* Plotly charts */
     .js-plotly-plot {
         border-radius: 16px;
     }
 
-    /* Premium card class */
+    /* Card styling */
     .premium-card {
-        background: linear-gradient(145deg, #1e1e30 0%, #252540 100%);
-        border: 1px solid rgba(102, 126, 234, 0.2);
-        border-radius: 20px;
+        background: linear-gradient(145deg, #0d1f35 0%, #142d4c 100%);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 16px;
         padding: 2rem;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Glowing effect for important metrics */
-    .glow {
-        box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     }
 </style>
 """, unsafe_allow_html=True)
 
-# Layout do tema para gráficos Plotly
+# Layout do tema para gráficos Plotly - Navy Blue
 PLOTLY_LAYOUT = dict(
     paper_bgcolor='rgba(0,0,0,0)',
     plot_bgcolor='rgba(0,0,0,0)',
-    font=dict(color='#a0a0b0', family='Inter, sans-serif'),
+    font=dict(color='#94a3b8', family='Inter, sans-serif'),
     title=dict(font=dict(color='#ffffff', size=18)),
     xaxis=dict(
-        gridcolor='rgba(102, 126, 234, 0.1)',
-        linecolor='rgba(102, 126, 234, 0.2)',
-        tickfont=dict(color='#a0a0b0')
+        gridcolor='rgba(59, 130, 246, 0.1)',
+        linecolor='rgba(59, 130, 246, 0.15)',
+        tickfont=dict(color='#94a3b8')
     ),
     yaxis=dict(
-        gridcolor='rgba(102, 126, 234, 0.1)',
-        linecolor='rgba(102, 126, 234, 0.2)',
-        tickfont=dict(color='#a0a0b0')
+        gridcolor='rgba(59, 130, 246, 0.1)',
+        linecolor='rgba(59, 130, 246, 0.15)',
+        tickfont=dict(color='#94a3b8')
     ),
     legend=dict(
         bgcolor='rgba(0,0,0,0)',
-        font=dict(color='#a0a0b0')
+        font=dict(color='#94a3b8')
     ),
     margin=dict(t=60, b=40, l=40, r=40)
 )
 
-# Cores premium
+# Cores Corporate SaaS - Navy Blue
 COLORS = {
-    'primary': '#667eea',
-    'secondary': '#764ba2',
-    'success': '#4ade80',
-    'warning': '#fbbf24',
-    'danger': '#f87171',
-    'info': '#60a5fa',
-    'gradient': ['#667eea', '#764ba2', '#a855f7', '#ec4899'],
+    'primary': '#2563eb',      # Azul principal
+    'secondary': '#1e4976',    # Azul marinho escuro
+    'accent': '#3b82f6',       # Azul claro
+    'success': '#22c55e',
+    'warning': '#f59e0b',
+    'danger': '#ef4444',
+    'info': '#0ea5e9',
+    'muted': '#64748b',
+    'gradient': ['#1e4976', '#2563eb', '#3b82f6', '#60a5fa'],
     # Termômetro de ocupação (quanto maior, melhor)
     'hot': '#22c55e',      # 90-100% - Verde intenso (excelente)
     'warm': '#84cc16',     # 80-89% - Verde claro (muito bom)
@@ -286,7 +282,7 @@ col_title, col_btn = st.columns([5, 1])
 with col_title:
     st.markdown("""
         <h1 style='margin-bottom: 0;'>Dashboard de Vagas</h1>
-        <p style='color: #667eea; font-size: 1.2rem; margin-top: 0.5rem;'>Colégio Elo • Visão Executiva</p>
+        <p style='color: #3b82f6; font-size: 1.2rem; margin-top: 0.5rem;'>Colégio Elo • Visão Executiva</p>
     """, unsafe_allow_html=True)
 
 with col_btn:
@@ -309,10 +305,10 @@ with col_btn:
 
 # Info bar
 st.markdown(f"""
-    <div style='display: flex; gap: 2rem; color: #606080; font-size: 0.85rem; margin-bottom: 2rem;'>
-        <span>📅 Última atualização: <strong style='color: #a0a0b0;'>{resumo['data_extracao'][:16].replace('T', ' ')}</strong></span>
-        <span>📊 Período: <strong style='color: #a0a0b0;'>{resumo['periodo']}</strong></span>
-        <span>🔢 Extrações: <strong style='color: #a0a0b0;'>{num_extracoes}</strong></span>
+    <div style='display: flex; gap: 2rem; color: #64748b; font-size: 0.85rem; margin-bottom: 2rem;'>
+        <span>📅 Última atualização: <strong style='color: #94a3b8;'>{resumo['data_extracao'][:16].replace('T', ' ')}</strong></span>
+        <span>📊 Período: <strong style='color: #94a3b8;'>{resumo['periodo']}</strong></span>
+        <span>🔢 Extrações: <strong style='color: #94a3b8;'>{num_extracoes}</strong></span>
     </div>
 """, unsafe_allow_html=True)
 
@@ -367,7 +363,7 @@ with col_left:
         name='Capacidade',
         x=df_unidades['Unidade'],
         y=[100] * len(df_unidades),
-        marker_color='rgba(102, 126, 234, 0.15)',
+        marker_color='rgba(59, 130, 246, 0.12)',
         hoverinfo='skip'
     ))
 
@@ -421,10 +417,10 @@ with col_right:
         name='Vagas',
         x=df_seg['Segmento'],
         y=df_seg['Vagas'],
-        marker_color='rgba(102, 126, 234, 0.3)',
+        marker_color='rgba(59, 130, 246, 0.25)',
         text=df_seg['Vagas'],
         textposition='outside',
-        textfont=dict(color='#667eea')
+        textfont=dict(color='#3b82f6')
     ))
 
     fig2.add_trace(go.Bar(
@@ -433,7 +429,7 @@ with col_right:
         y=df_seg['Matriculados'],
         marker=dict(
             color=df_seg['Matriculados'],
-            colorscale=[[0, '#667eea'], [1, '#764ba2']]
+            colorscale=[[0, '#1e4976'], [1, '#2563eb']]
         ),
         text=df_seg['Matriculados'],
         textposition='outside',
@@ -476,7 +472,7 @@ if num_extracoes >= 2:
             line=dict(color=COLORS['primary'], width=3),
             marker=dict(size=10, color=COLORS['primary']),
             fill='tozeroy',
-            fillcolor='rgba(102, 126, 234, 0.1)'
+            fillcolor='rgba(37, 99, 235, 0.1)'
         ))
 
         fig_hist.update_layout(
@@ -489,7 +485,7 @@ if num_extracoes >= 2:
 
     with tab2:
         fig_unid = go.Figure()
-        cores_unid = [COLORS['primary'], COLORS['success'], COLORS['warning'], '#ec4899']
+        cores_unid = [COLORS['primary'], COLORS['accent'], COLORS['info'], '#60a5fa']
 
         for i, unidade in enumerate(df_hist_unidades['unidade_nome'].unique()):
             df_u = df_hist_unidades[df_hist_unidades['unidade_nome'] == unidade]
@@ -542,7 +538,7 @@ for i, tab in enumerate(tabs):
                 x=df_seg_u['Segmento'],
                 y=df_seg_u['vagas'],
                 name='Vagas',
-                marker_color='rgba(102, 126, 234, 0.3)'
+                marker_color='rgba(59, 130, 246, 0.25)'
             ))
             fig.add_trace(go.Bar(
                 x=df_seg_u['Segmento'],
@@ -558,7 +554,7 @@ for i, tab in enumerate(tabs):
                 labels=['Novatos', 'Veteranos'],
                 values=[t['novatos'], t['veteranos']],
                 hole=.6,
-                marker_colors=[COLORS['warning'], COLORS['primary']]
+                marker_colors=[COLORS['info'], COLORS['primary']]
             )])
             fig_pie.update_layout(
                 **PLOTLY_LAYOUT,
@@ -577,8 +573,8 @@ for i, tab in enumerate(tabs):
 # Footer
 st.markdown("<br><br>", unsafe_allow_html=True)
 st.markdown(f"""
-    <div style='text-align: center; color: #404060; font-size: 0.8rem; padding: 2rem 0;'>
+    <div style='text-align: center; color: #64748b; font-size: 0.8rem; padding: 2rem 0;'>
         <p>Dashboard atualizado automaticamente às 6h • Última extração: {resumo['data_extracao'][:16].replace('T', ' ')}</p>
-        <p style='color: #303050;'>Colégio Elo © 2026</p>
+        <p style='color: #475569;'>Colégio Elo © 2026</p>
     </div>
 """, unsafe_allow_html=True)
