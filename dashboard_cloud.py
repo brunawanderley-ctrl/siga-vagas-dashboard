@@ -381,7 +381,10 @@ with col_left:
     ))
 
     fig1.update_layout(
-        **PLOTLY_LAYOUT,
+        paper_bgcolor=PLOTLY_LAYOUT['paper_bgcolor'],
+        plot_bgcolor=PLOTLY_LAYOUT['plot_bgcolor'],
+        font=PLOTLY_LAYOUT['font'],
+        margin=PLOTLY_LAYOUT['margin'],
         barmode='overlay',
         showlegend=False,
         height=350,
@@ -476,7 +479,11 @@ if num_extracoes >= 2:
         ))
 
         fig_hist.update_layout(
-            **PLOTLY_LAYOUT,
+            paper_bgcolor=PLOTLY_LAYOUT['paper_bgcolor'],
+            plot_bgcolor=PLOTLY_LAYOUT['plot_bgcolor'],
+            font=PLOTLY_LAYOUT['font'],
+            margin=PLOTLY_LAYOUT['margin'],
+            xaxis=PLOTLY_LAYOUT['xaxis'],
             height=300,
             yaxis=dict(**PLOTLY_LAYOUT['yaxis'], title='Ocupação %', range=[0, 100])
         )
