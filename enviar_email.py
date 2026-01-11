@@ -129,7 +129,7 @@ def verificar_alertas(resumo):
     # Verifica ocupação geral
     total = resumo['total_geral']
     ocupacao_geral = round(total['matriculados'] / total['vagas'] * 100, 1)
-    if ocupacao_geral < 60:
+    if ocupacao_geral < 50:
         alertas.append(f"❄️ OCUPAÇÃO GERAL CRÍTICA: {ocupacao_geral}%")
     elif ocupacao_geral < 70:
         alertas.append(f"⚠️ OCUPAÇÃO GERAL BAIXA: {ocupacao_geral}%")
@@ -139,7 +139,7 @@ def verificar_alertas(resumo):
         nome = unidade['nome'].split('(')[1].replace(')', '') if '(' in unidade['nome'] else unidade['nome']
         t = unidade['total']
         ocup = round(t['matriculados'] / t['vagas'] * 100, 1)
-        if ocup < 60:
+        if ocup < 50:
             alertas.append(f"❄️ {nome}: {ocup}% (CRÍTICO)")
         elif ocup < 70:
             alertas.append(f"⚠️ {nome}: {ocup}% (Atenção)")
@@ -147,7 +147,7 @@ def verificar_alertas(resumo):
         # Verifica por segmento
         for seg, vals in unidade['segmentos'].items():
             ocup_seg = round(vals['matriculados'] / vals['vagas'] * 100, 1)
-            if ocup_seg < 60:
+            if ocup_seg < 50:
                 alertas.append(f"❄️ {nome} - {seg}: {ocup_seg}%")
 
     return alertas
