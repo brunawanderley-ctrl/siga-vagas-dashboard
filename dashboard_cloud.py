@@ -94,10 +94,29 @@ st.markdown("""
 
     /* Expander */
     .streamlit-expanderHeader {
+        background: rgba(15, 33, 55, 0.9) !important;
+        border: 1px solid rgba(59, 130, 246, 0.15);
+        border-radius: 12px;
+        color: #ffffff !important;
+    }
+
+    .streamlit-expanderHeader p,
+    .streamlit-expanderHeader span,
+    [data-testid="stExpander"] summary,
+    [data-testid="stExpander"] summary span,
+    [data-testid="stExpander"] summary p {
+        color: #ffffff !important;
+    }
+
+    [data-testid="stExpander"] {
         background: rgba(15, 33, 55, 0.9);
         border: 1px solid rgba(59, 130, 246, 0.15);
         border-radius: 12px;
-        color: #ffffff;
+    }
+
+    [data-testid="stExpander"] details {
+        background: rgba(15, 33, 55, 0.9);
+        border-radius: 12px;
     }
 
     /* Dataframe */
