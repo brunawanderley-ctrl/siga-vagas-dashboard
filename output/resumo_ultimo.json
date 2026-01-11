@@ -1,5 +1,5 @@
 {
-  "data_extracao": "2026-01-11T10:10:17.952755",
+  "data_extracao": "2026-01-11T11:58:54.222621",
   "periodo": "2026",
   "unidades": [
     {
@@ -11,28 +11,28 @@
           "novatos": 25,
           "veteranos": 56,
           "matriculados": 81,
-          "disponiveis": 101
+          "disponiveis": 164
         },
         "Fund. I": {
           "vagas": 520,
           "novatos": 43,
           "veteranos": 183,
           "matriculados": 226,
-          "disponiveis": 105
+          "disponiveis": 294
         },
         "Fund. II": {
           "vagas": 561,
           "novatos": 58,
           "veteranos": 208,
           "matriculados": 266,
-          "disponiveis": 122
+          "disponiveis": 295
         },
         "Ens. Médio": {
           "vagas": 325,
           "novatos": 23,
           "veteranos": 146,
           "matriculados": 169,
-          "disponiveis": 3
+          "disponiveis": 156
         }
       },
       "total": {
@@ -40,7 +40,7 @@
         "novatos": 149,
         "veteranos": 593,
         "matriculados": 742,
-        "disponiveis": 331
+        "disponiveis": 909
       }
     },
     {
@@ -52,28 +52,28 @@
           "novatos": 33,
           "veteranos": 41,
           "matriculados": 74,
-          "disponiveis": 33
+          "disponiveis": 76
         },
         "Fund. I": {
           "vagas": 465,
           "novatos": 61,
           "veteranos": 140,
           "matriculados": 201,
-          "disponiveis": 101
+          "disponiveis": 264
         },
         "Fund. II": {
           "vagas": 619,
           "novatos": 53,
           "veteranos": 226,
           "matriculados": 279,
-          "disponiveis": 170
+          "disponiveis": 340
         },
         "Ens. Médio": {
           "vagas": 395,
           "novatos": 36,
           "veteranos": 176,
           "matriculados": 212,
-          "disponiveis": 21
+          "disponiveis": 183
         }
       },
       "total": {
@@ -81,7 +81,7 @@
         "novatos": 183,
         "veteranos": 583,
         "matriculados": 766,
-        "disponiveis": 325
+        "disponiveis": 863
       }
     },
     {
@@ -93,28 +93,28 @@
           "novatos": 26,
           "veteranos": 52,
           "matriculados": 78,
-          "disponiveis": 73
+          "disponiveis": 100
         },
         "Fund. I": {
           "vagas": 375,
           "novatos": 32,
           "veteranos": 132,
           "matriculados": 164,
-          "disponiveis": 109
+          "disponiveis": 211
         },
         "Fund. II": {
           "vagas": 520,
           "novatos": 50,
           "veteranos": 176,
           "matriculados": 226,
-          "disponiveis": 134
+          "disponiveis": 294
         },
         "Ens. Médio": {
           "vagas": 255,
           "novatos": 39,
           "veteranos": 78,
           "matriculados": 117,
-          "disponiveis": 83
+          "disponiveis": 138
         }
       },
       "total": {
@@ -122,7 +122,7 @@
         "novatos": 147,
         "veteranos": 438,
         "matriculados": 585,
-        "disponiveis": 399
+        "disponiveis": 743
       }
     },
     {
@@ -134,28 +134,28 @@
           "novatos": 25,
           "veteranos": 46,
           "matriculados": 71,
-          "disponiveis": 144
+          "disponiveis": 159
         },
         "Fund. I": {
           "vagas": 465,
           "novatos": 64,
           "veteranos": 141,
           "matriculados": 205,
-          "disponiveis": 205
+          "disponiveis": 260
         },
         "Fund. II": {
           "vagas": 440,
           "novatos": 77,
           "veteranos": 142,
           "matriculados": 219,
-          "disponiveis": 117
+          "disponiveis": 221
         },
         "Ens. Médio": {
           "vagas": 146,
           "novatos": 29,
           "veteranos": 50,
           "matriculados": 79,
-          "disponiveis": 11
+          "disponiveis": 67
         }
       },
       "total": {
@@ -163,7 +163,7 @@
         "novatos": 195,
         "veteranos": 379,
         "matriculados": 574,
-        "disponiveis": 477
+        "disponiveis": 707
       }
     }
   ],
@@ -172,6 +172,6 @@
     "novatos": 674,
     "veteranos": 1993,
     "matriculados": 2667,
-    "disponiveis": 1532
+    "disponiveis": 3222
   }
 }

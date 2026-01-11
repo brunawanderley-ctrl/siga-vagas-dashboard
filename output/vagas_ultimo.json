@@ -1,5 +1,5 @@
 {
-  "data_extracao": "2026-01-11T10:10:17.952755",
+  "data_extracao": "2026-01-11T11:58:54.222621",
   "periodo": "2026",
   "unidades": [
     {
@@ -7,7 +7,7 @@
       "nome": "1 - BV (Boa Viagem)",
       "turmas": [
         {
-          "turma": "Infantil II - Turma A Manhã - Boa Viagem - Manhã",
+          "turma": "Infantil II - Turma A Manhã - Manhã",
           "curso": "1- BV - Educação Infantil - Unidade Boa Viagem / Infantil II / 2026",
           "segmento": "Ed. Infantil",
           "vagas": 15,
@@ -16,10 +16,10 @@
           "matriculados": 4,
           "vagas_restantes": 11,
           "pre_matriculados": 8,
-          "disponiveis": 3
+          "disponiveis": 11
         },
         {
-          "turma": "Infantil II - Turma A Tarde - Boa Viagem - Tarde",
+          "turma": "Infantil II - Turma A Tarde - Tarde",
           "curso": "1- BV - Educação Infantil - Unidade Boa Viagem / Infantil II / 2026",
           "segmento": "Ed. Infantil",
           "vagas": 15,
@@ -31,7 +31,7 @@
           "disponiveis": 12
         },
         {
-          "turma": "Infantil III - Turma A Manhã - Boa Viagem - Manhã",
+          "turma": "Infantil III - Turma A Manhã - Manhã",
           "curso": "1- BV - Educação Infantil - Unidade Boa Viagem / Infantil III / 2026",
           "segmento": "Ed. Infantil",
           "vagas": 22,
@@ -43,7 +43,7 @@
           "disponiveis": 14
         },
         {
-          "turma": "Infantil III - Turma A Tarde - Boa Viagem - Tarde",
+          "turma": "Infantil III - Turma A Tarde - Tarde",
           "curso": "1- BV - Educação Infantil - Unidade Boa Viagem / Infantil III / 2026",
           "segmento": "Ed. Infantil",
           "vagas": 23,
@@ -52,10 +52,10 @@
           "matriculados": 9,
           "vagas_restantes": 14,
           "pre_matriculados": 4,
-          "disponiveis": 10
+          "disponiveis": 14
         },
         {
-          "turma": "Infantil III - Turma B Manhã - Boa Viagem - Manhã",
+          "turma": "Infantil III - Turma B Manhã - Manhã",
           "curso": "1- BV - Educação Infantil - Unidade Boa Viagem / Infantil III / 2026",
           "segmento": "Ed. Infantil",
           "vagas": 23,
@@ -67,7 +67,7 @@
           "disponiveis": 20
         },
         {
-          "turma": "Infantil IV - Turma A Manhã - Boa Viagem - Manhã",
+          "turma": "Infantil IV - Turma A Manhã - Manhã",
           "curso": "1- BV - Educação Infantil - Unidade Boa Viagem / Infantil IV / 2026",
           "segmento": "Ed. Infantil",
           "vagas": 24,
@@ -76,10 +76,10 @@
           "matriculados": 8,
           "vagas_restantes": 16,
           "pre_matriculados": 8,
-          "disponiveis": 8
+          "disponiveis": 16
         },
         {
-          "turma": "Infantil IV - Turma A Tarde - Boa Viagem - Tarde",
+          "turma": "Infantil IV - Turma A Tarde - Tarde",
           "curso": "1- BV - Educação Infantil - Unidade Boa Viagem / Infantil IV / 2026",
           "segmento": "Ed. Infantil",
           "vagas": 24,
@@ -88,10 +88,10 @@
           "matriculados": 9,
           "vagas_restantes": 15,
           "pre_matriculados": 7,
-          "disponiveis": 8
+          "disponiveis": 15
         },
         {
-          "turma": "Infantil IV - Turma B Manhã - Boa Viagem - Manhã",
+          "turma": "Infantil IV - Turma B Manhã - Manhã",
           "curso": "1- BV - Educação Infantil - Unidade Boa Viagem / Infantil IV / 2026",
           "segmento": "Ed. Infantil",
           "vagas": 24,
@@ -100,10 +100,10 @@
           "matriculados": 7,
           "vagas_restantes": 17,
           "pre_matriculados": 5,
-          "disponiveis": 12
+          "disponiveis": 17
         },
         {
-          "turma": "Infantil V - Turma A Manhã - Boa Viagem - Manhã",
+          "turma": "Infantil V - Turma A Manhã - Manhã",
           "curso": "1- BV - Educação Infantil - Unidade Boa Viagem / Infantil V / 2026",
           "segmento": "Ed. Infantil",
           "vagas": 25,
@@ -112,10 +112,10 @@
           "matriculados": 9,
           "vagas_restantes": 16,
           "pre_matriculados": 13,
-          "disponiveis": 3
+          "disponiveis": 16
         },
         {
-          "turma": "Infantil V - Turma A Tarde - Boa Viagem - Tarde",
+          "turma": "Infantil V - Turma A Tarde - Tarde",
           "curso": "1- BV - Educação Infantil - Unidade Boa Viagem / Infantil V / 2026",
           "segmento": "Ed. Infantil",
           "vagas": 25,
@@ -124,10 +124,10 @@
           "matriculados": 7,
           "vagas_restantes": 18,
           "pre_matriculados": 10,
-          "disponiveis": 8
+          "disponiveis": 18
         },
         {
-          "turma": "Infantil V - Turma B Manhã - Boa Viagem - Manhã",
+          "turma": "Infantil V - Turma B Manhã - Manhã",
           "curso": "1- BV - Educação Infantil - Unidade Boa Viagem / Infantil V / 2026",
           "segmento": "Ed. Infantil",
           "vagas": 25,
@@ -136,10 +136,10 @@
           "matriculados": 14,
           "vagas_restantes": 11,
           "pre_matriculados": 8,
-          "disponiveis": 3
+          "disponiveis": 11
         },
         {
-          "turma": "1º Ano - Turma A Manhã - Boa Viagem - Manhã",
+          "turma": "1º Ano - Turma A Manhã - Manhã",
           "curso": "1- BV - Ensino Fundamental I - Unidade Boa Viagem / 1º Ano / 2026",
           "segmento": "Fund. I",
           "vagas": 25,
@@ -148,10 +148,10 @@
           "matriculados": 14,
           "vagas_restantes": 11,
           "pre_matriculados": 12,
-          "disponiveis": -1
+          "disponiveis": 11
         },
         {
-          "turma": "1º Ano - Turma A Tarde - Boa Viagem - Tarde",
+          "turma": "1º Ano - Turma A Tarde - Tarde",
           "curso": "1- BV - Ensino Fundamental I - Unidade Boa Viagem / 1º Ano / 2026",
           "segmento": "Fund. I",
           "vagas": 25,
@@ -160,10 +160,10 @@
           "matriculados": 8,
           "vagas_restantes": 17,
           "pre_matriculados": 12,
-          "disponiveis": 5
+          "disponiveis": 17
         },
         {
-          "turma": "1º Ano - Turma B Manhã - Boa Viagem - Manhã",
+          "turma": "1º Ano - Turma B Manhã - Manhã",
           "curso": "1- BV - Ensino Fundamental I - Unidade Boa Viagem / 1º Ano / 2026",
           "segmento": "Fund. I",
           "vagas": 25,
@@ -172,10 +172,10 @@
           "matriculados": 16,
           "vagas_restantes": 9,
           "pre_matriculados": 10,
-          "disponiveis": -1
+          "disponiveis": 9
         },
         {
-          "turma": "1º Ano - Turma B Tarde - Boa Viagem - Tarde",
+          "turma": "1º Ano - Turma B Tarde - Tarde",
           "curso": "1- BV - Ensino Fundamental I - Unidade Boa Viagem / 1º Ano / 2026",
           "segmento": "Fund. I",
           "vagas": 25,
@@ -187,7 +187,7 @@
           "disponiveis": 24
         },
         {
-          "turma": "2º Ano - Turma A Manhã - Boa Viagem - Manhã",
+          "turma": "2º Ano - Turma A Manhã - Manhã",
           "curso": "1- BV - Ensino Fundamental I - Unidade Boa Viagem / 2º Ano / 2026",
           "segmento": "Fund. I",
           "vagas": 25,
@@ -196,10 +196,10 @@
           "matriculados": 18,
           "vagas_restantes": 7,
           "pre_matriculados": 7,
-          "disponiveis": 0
+          "disponiveis": 7
         },
         {
-          "turma": "2º Ano - Turma A Tarde - Boa Viagem - Tarde",
+          "turma": "2º Ano - Turma A Tarde - Tarde",
           "curso": "1- BV - Ensino Fundamental I - Unidade Boa Viagem / 2º Ano / 2026",
           "segmento": "Fund. I",
           "vagas": 25,
@@ -208,10 +208,10 @@
           "matriculados": 5,
           "vagas_restantes": 20,
           "pre_matriculados": 11,
-          "disponiveis": 9
+          "disponiveis": 20
         },
         {
-          "turma": "2º Ano - Turma B Manhã - Boa Viagem - Manhã",
+          "turma": "2º Ano - Turma B Manhã - Manhã",
           "curso": "1- BV - Ensino Fundamental I - Unidade Boa Viagem / 2º Ano / 2026",
           "segmento": "Fund. I",
           "vagas": 25,
@@ -220,7 +220,7 @@
           "matriculados": 11,
           "vagas_restantes": 14,
           "pre_matriculados": 10,
-          "disponiveis": 4
+          "disponiveis": 14
         },
         {
           "turma": "2º Ano - Turma B Tarde - Boa Viagem - Tarde",
@@ -232,7 +232,7 @@
           "matriculados": 15,
           "vagas_restantes": 10,
           "pre_matriculados": 1,
-          "disponiveis": 9
+          "disponiveis": 10
         },
         {
           "turma": "3º Ano - Turma A Manhã - Boa Viagem - Manhã",
@@ -244,7 +244,7 @@
           "matriculados": 8,
           "vagas_restantes": 22,
           "pre_matriculados": 10,
-          "disponiveis": 12
+          "disponiveis": 22
         },
         {
           "turma": "3º Ano - Turma A Tarde - Boa Viagem - Tarde",
@@ -256,7 +256,7 @@
           "matriculados": 5,
           "vagas_restantes": 25,
           "pre_matriculados": 15,
-          "disponiveis": 10
+          "disponiveis": 25
         },
         {
           "turma": "3º Ano - Turma B Manhã - Boa Viagem - Manhã",
@@ -268,7 +268,7 @@
           "matriculados": 14,
           "vagas_restantes": 16,
           "pre_matriculados": 11,
-          "disponiveis": 5
+          "disponiveis": 16
         },
         {
           "turma": "3º Ano - Turma B Tarde - Boa Viagem - Tarde",
@@ -280,7 +280,7 @@
           "matriculados": 11,
           "vagas_restantes": -11,
           "pre_matriculados": 7,
-          "disponiveis": -18
+          "disponiveis": -11
         },
         {
           "turma": "4 ºAno - Turma B Manhã - Boa Viagem - Manhã",
@@ -292,7 +292,7 @@
           "matriculados": 8,
           "vagas_restantes": 24,
           "pre_matriculados": 13,
-          "disponiveis": 11
+          "disponiveis": 24
         },
         {
           "turma": "4 ºAno - Turma C Manhã - Boa Viagem - Manhã",
@@ -316,7 +316,7 @@
           "matriculados": 15,
           "vagas_restantes": 17,
           "pre_matriculados": 10,
-          "disponiveis": 7
+          "disponiveis": 17
         },
         {
           "turma": "4º Ano - Turma A Tarde - Boa Viagem - Tarde",
@@ -328,7 +328,7 @@
           "matriculados": 15,
           "vagas_restantes": 17,
           "pre_matriculados": 10,
-          "disponiveis": 7
+          "disponiveis": 17
         },
         {
           "turma": "5º Ano - Turma A Manhã - Boa Viagem - Manhã",
@@ -340,7 +340,7 @@
           "matriculados": 25,
           "vagas_restantes": 8,
           "pre_matriculados": 13,
-          "disponiveis": -5
+          "disponiveis": 8
         },
         {
           "turma": "5º Ano - Turma A Tarde - Boa Viagem - Tarde",
@@ -352,7 +352,7 @@
           "matriculados": 16,
           "vagas_restantes": 17,
           "pre_matriculados": 17,
-          "disponiveis": 0
+          "disponiveis": 17
         },
         {
           "turma": "5º Ano - Turma B Manhã - Boa Viagem - Manhã",
@@ -364,7 +364,7 @@
           "matriculados": 15,
           "vagas_restantes": 18,
           "pre_matriculados": 20,
-          "disponiveis": -2
+          "disponiveis": 18
         },
         {
           "turma": "5º Ano - Turma C Manhã - Boa Viagem - Manhã",
@@ -388,7 +388,7 @@
           "matriculados": 34,
           "vagas_restantes": 6,
           "pre_matriculados": 8,
-          "disponiveis": -2
+          "disponiveis": 6
         },
         {
           "turma": "6º Ano - Turma A Tarde - Boa Viagem - Tarde",
@@ -400,7 +400,7 @@
           "matriculados": 22,
           "vagas_restantes": 18,
           "pre_matriculados": 24,
-          "disponiveis": -6
+          "disponiveis": 18
         },
         {
           "turma": "6º Ano - Turma B Manhã - Boa Viagem - Manhã",
@@ -412,7 +412,7 @@
           "matriculados": 27,
           "vagas_restantes": 13,
           "pre_matriculados": 2,
-          "disponiveis": 11
+          "disponiveis": 13
         },
         {
           "turma": "7º Ano - Turma A Manhã - Boa Viagem - Manhã",
@@ -424,7 +424,7 @@
           "matriculados": 17,
           "vagas_restantes": 25,
           "pre_matriculados": 9,
-          "disponiveis": 16
+          "disponiveis": 25
         },
         {
           "turma": "7º Ano - Turma A Tarde - Boa Viagem - Tarde",
@@ -436,7 +436,7 @@
           "matriculados": 20,
           "vagas_restantes": 22,
           "pre_matriculados": 15,
-          "disponiveis": 7
+          "disponiveis": 22
         },
         {
           "turma": "7º Ano - Turma B Manhã - Boa Viagem - Manhã",
@@ -448,7 +448,7 @@
           "matriculados": 14,
           "vagas_restantes": 28,
           "pre_matriculados": 21,
-          "disponiveis": 7
+          "disponiveis": 28
         },
         {
           "turma": "8º Ano - Turma A Manhã - Boa Viagem - Manhã",
@@ -460,7 +460,7 @@
           "matriculados": 27,
           "vagas_restantes": 18,
           "pre_matriculados": 13,
-          "disponiveis": 5
+          "disponiveis": 18
         },
         {
           "turma": "8º Ano - Turma A Tarde - Boa Viagem - Tarde",
@@ -472,7 +472,7 @@
           "matriculados": 16,
           "vagas_restantes": 29,
           "pre_matriculados": 28,
-          "disponiveis": 1
+          "disponiveis": 29
         },
         {
           "turma": "8º Ano - Turma B Manhã - Boa Viagem - Manhã",
@@ -484,7 +484,7 @@
           "matriculados": 26,
           "vagas_restantes": 19,
           "pre_matriculados": 13,
-          "disponiveis": 6
+          "disponiveis": 19
         },
         {
           "turma": "9º Ano - Turma A Manhã - Boa Viagem - Manhã",
@@ -496,7 +496,7 @@
           "matriculados": 22,
           "vagas_restantes": 23,
           "pre_matriculados": 16,
-          "disponiveis": 7
+          "disponiveis": 23
         },
         {
           "turma": "9º Ano - Turma A Tarde - Boa Viagem - Tarde",
@@ -508,7 +508,7 @@
           "matriculados": 10,
           "vagas_restantes": 35,
           "pre_matriculados": 13,
-          "disponiveis": 22
+          "disponiveis": 35
         },
         {
           "turma": "9º Ano - Turma B Manhã - Boa Viagem - Manhã",
@@ -520,7 +520,7 @@
           "matriculados": 29,
           "vagas_restantes": 16,
           "pre_matriculados": 11,
-          "disponiveis": 5
+          "disponiveis": 16
         },
         {
           "turma": "9º Ano - Turma C Manhã - Boa Viagem - Manhã",
@@ -544,7 +544,7 @@
           "matriculados": 22,
           "vagas_restantes": 23,
           "pre_matriculados": 17,
-          "disponiveis": 6
+          "disponiveis": 23
         },
         {
           "turma": "1º Ano Médio - Turma B Manhã - Boa Viagem - Manhã",
@@ -556,7 +556,7 @@
           "matriculados": 24,
           "vagas_restantes": 21,
           "pre_matriculados": 15,
-          "disponiveis": 6
+          "disponiveis": 21
         },
         {
           "turma": "1º Ano Médio - Turma C Manhã - Boa Viagem - Manhã",
@@ -568,7 +568,7 @@
           "matriculados": 21,
           "vagas_restantes": 24,
           "pre_matriculados": 30,
-          "disponiveis": -6
+          "disponiveis": 24
         },
         {
           "turma": "2º Ano Médio - Turma A Manhã - Boa Viagem - Manhã",
@@ -580,7 +580,7 @@
           "matriculados": 31,
           "vagas_restantes": 14,
           "pre_matriculados": 35,
-          "disponiveis": -21
+          "disponiveis": 14
         },
         {
           "turma": "2º Ano Médio - Turma B Manhã - Boa Viagem - Manhã",
@@ -592,7 +592,7 @@
           "matriculados": 25,
           "vagas_restantes": 20,
           "pre_matriculados": 26,
-          "disponiveis": -6
+          "disponiveis": 20
         },
         {
           "turma": "3º Ano - Médio Turma A Manhã - Boa Viagem - Manhã",
@@ -604,7 +604,7 @@
           "matriculados": 28,
           "vagas_restantes": 22,
           "pre_matriculados": 14,
-          "disponiveis": 8
+          "disponiveis": 22
         },
         {
           "turma": "3º Ano - Médio Turma B Manhã - Boa Viagem - Manhã",
@@ -616,7 +616,7 @@
           "matriculados": 18,
           "vagas_restantes": 32,
           "pre_matriculados": 16,
-          "disponiveis": 16
+          "disponiveis": 32
         }
       ]
     },
@@ -658,7 +658,7 @@
           "matriculados": 17,
           "vagas_restantes": -2,
           "pre_matriculados": 5,
-          "disponiveis": -7
+          "disponiveis": -2
         },
         {
           "turma": "Candeias Kids- Infantil III - Turma A Tarde - Tarde",
@@ -670,7 +670,7 @@
           "matriculados": 8,
           "vagas_restantes": 7,
           "pre_matriculados": 2,
-          "disponiveis": 5
+          "disponiveis": 7
         },
         {
           "turma": "Candeias Kids- Infantil IV - Turma A Manhã - Manhã",
@@ -682,7 +682,7 @@
           "matriculados": 10,
           "vagas_restantes": 10,
           "pre_matriculados": 13,
-          "disponiveis": -3
+          "disponiveis": 10
         },
         {
           "turma": "Candeias Kids- Infantil IV - Turma A Tarde - Tarde",
@@ -694,7 +694,7 @@
           "matriculados": 5,
           "vagas_restantes": 15,
           "pre_matriculados": 8,
-          "disponiveis": 7
+          "disponiveis": 15
         },
         {
           "turma": "Candeias Kids- Infantil V - Turma A Manhã - Manhã",
@@ -706,7 +706,7 @@
           "matriculados": 14,
           "vagas_restantes": 11,
           "pre_matriculados": 9,
-          "disponiveis": 2
+          "disponiveis": 11
         },
         {
           "turma": "Candeias Kids- Infantil V - Turma A Tarde - Tarde",
@@ -718,7 +718,7 @@
           "matriculados": 7,
           "vagas_restantes": 18,
           "pre_matriculados": 6,
-          "disponiveis": 12
+          "disponiveis": 18
         },
         {
           "turma": "EFI - Candeias Kids - 1º Ano - Turma B- Manhã - Manhã",
@@ -742,7 +742,7 @@
           "matriculados": 14,
           "vagas_restantes": 11,
           "pre_matriculados": 11,
-          "disponiveis": 0
+          "disponiveis": 11
         },
         {
           "turma": "EFI - Candeias Kids - 1º Ano - Turma A -Tarde - Tarde",
@@ -754,7 +754,7 @@
           "matriculados": 10,
           "vagas_restantes": 15,
           "pre_matriculados": 16,
-          "disponiveis": -1
+          "disponiveis": 15
         },
         {
           "turma": "EFI - Candeias Kids - 2º Ano - Turma A -Tarde - Tarde",
@@ -778,7 +778,7 @@
           "matriculados": 14,
           "vagas_restantes": 16,
           "pre_matriculados": 16,
-          "disponiveis": 0
+          "disponiveis": 16
         },
         {
           "turma": "EFI - Candeias Kids - 2º Ano - Turma B - Manhã - Manhã",
@@ -790,7 +790,7 @@
           "matriculados": 18,
           "vagas_restantes": 12,
           "pre_matriculados": 13,
-          "disponiveis": -1
+          "disponiveis": 12
         },
         {
           "turma": "EFI - Candeias Kids - 3º Ano - Turma A -Tarde - Tarde",
@@ -802,7 +802,7 @@
           "matriculados": 14,
           "vagas_restantes": 16,
           "pre_matriculados": 17,
-          "disponiveis": -1
+          "disponiveis": 16
         },
         {
           "turma": "EFI - Candeias Kids - 3º Ano - Turma A- Manhã - Manhã",
@@ -814,7 +814,7 @@
           "matriculados": 20,
           "vagas_restantes": 10,
           "pre_matriculados": 5,
-          "disponiveis": 5
+          "disponiveis": 10
         },
         {
           "turma": "EFI - Candeias Kids - 3º Ano - Turma B - Manhã - Manhã",
@@ -826,7 +826,7 @@
           "matriculados": 10,
           "vagas_restantes": 20,
           "pre_matriculados": 13,
-          "disponiveis": 7
+          "disponiveis": 20
         },
         {
           "turma": "EFI - Candeias Teen I- 4º Ano - Turma A- Manhã - Manhã",
@@ -838,7 +838,7 @@
           "matriculados": 17,
           "vagas_restantes": 18,
           "pre_matriculados": 5,
-          "disponiveis": 13
+          "disponiveis": 18
         },
         {
           "turma": "EFI - Candeias Teen I- 4º Ano - Turma A - Tarde - Tarde",
@@ -850,7 +850,7 @@
           "matriculados": 6,
           "vagas_restantes": 29,
           "pre_matriculados": 14,
-          "disponiveis": 15
+          "disponiveis": 29
         },
         {
           "turma": "EFI - Candeias Teen I- 4º Ano - Turma B - Manhã - Manhã",
@@ -862,7 +862,7 @@
           "matriculados": 14,
           "vagas_restantes": 21,
           "pre_matriculados": 7,
-          "disponiveis": 14
+          "disponiveis": 21
         },
         {
           "turma": "EFI - Candeias Teen I- 5º Ano - Turma A - Manhã - Manhã",
@@ -874,7 +874,7 @@
           "matriculados": 15,
           "vagas_restantes": 20,
           "pre_matriculados": 17,
-          "disponiveis": 3
+          "disponiveis": 20
         },
         {
           "turma": "EFI - Candeias Teen I- 5º Ano - Turma A - Tarde - Tarde",
@@ -886,7 +886,7 @@
           "matriculados": 16,
           "vagas_restantes": 19,
           "pre_matriculados": 16,
-          "disponiveis": 3
+          "disponiveis": 19
         },
         {
           "turma": "EFI - Candeias Teen I- 5º Ano - Turma B - Manhã - Manhã",
@@ -898,7 +898,7 @@
           "matriculados": 15,
           "vagas_restantes": 20,
           "pre_matriculados": 13,
-          "disponiveis": 7
+          "disponiveis": 20
         },
         {
           "turma": "EFII - Candeias Teen I - 6º Ano - Turma A Tarde - Tarde",
@@ -910,7 +910,7 @@
           "matriculados": 15,
           "vagas_restantes": 27,
           "pre_matriculados": 9,
-          "disponiveis": 18
+          "disponiveis": 27
         },
         {
           "turma": "EFII - Candeias Teen I - 6º Ano - Turma B Manhã - Manhã",
@@ -922,7 +922,7 @@
           "matriculados": 23,
           "vagas_restantes": 17,
           "pre_matriculados": 14,
-          "disponiveis": 3
+          "disponiveis": 17
         },
         {
           "turma": "EFII - Candeias Teen I- 6º Ano - Turma A Manhã - Manhã",
@@ -934,7 +934,7 @@
           "matriculados": 19,
           "vagas_restantes": 23,
           "pre_matriculados": 10,
-          "disponiveis": 13
+          "disponiveis": 23
         },
         {
           "turma": "EFII - Candeias Teen I - 7º Ano - Turma B Manhã - Manhã",
@@ -946,7 +946,7 @@
           "matriculados": 33,
           "vagas_restantes": 12,
           "pre_matriculados": 21,
-          "disponiveis": -9
+          "disponiveis": 12
         },
         {
           "turma": "EFII - Candeias Teen I -7º Ano - Turma A Manhã - Manhã",
@@ -958,7 +958,7 @@
           "matriculados": 28,
           "vagas_restantes": 17,
           "pre_matriculados": 24,
-          "disponiveis": -7
+          "disponiveis": 17
         },
         {
           "turma": "EFII - Candeias Teen I- 7º Ano - Turma A Tarde - Tarde",
@@ -970,7 +970,7 @@
           "matriculados": 16,
           "vagas_restantes": 29,
           "pre_matriculados": 23,
-          "disponiveis": 6
+          "disponiveis": 29
         },
         {
           "turma": "EFII - Candeias Teen I - 8º Ano - Turma C Manhã - Manhã",
@@ -982,7 +982,7 @@
           "matriculados": 0,
           "vagas_restantes": 45,
           "pre_matriculados": 1,
-          "disponiveis": 44
+          "disponiveis": 45
         },
         {
           "turma": "EFII - Candeias Teen I - 8º Ano - Turma A Manhã - Manhã",
@@ -1006,7 +1006,7 @@
           "matriculados": 26,
           "vagas_restantes": 19,
           "pre_matriculados": 17,
-          "disponiveis": 2
+          "disponiveis": 19
         },
         {
           "turma": "EFII - Candeias Teen I- 8º Ano - Turma- A Tarde - Tarde",
@@ -1018,7 +1018,7 @@
           "matriculados": 14,
           "vagas_restantes": 31,
           "pre_matriculados": 14,
-          "disponiveis": 17
+          "disponiveis": 31
         },
         {
           "turma": "EFII - Candeias Teen II- 9º Ano - Turma A -Manhã - Manhã",
@@ -1030,7 +1030,7 @@
           "matriculados": 32,
           "vagas_restantes": 13,
           "pre_matriculados": 17,
-          "disponiveis": -4
+          "disponiveis": 13
         },
         {
           "turma": "EFII - Candeias Teen II- 9º Ano - Turma A Tarde - Tarde",
@@ -1042,7 +1042,7 @@
           "matriculados": 0,
           "vagas_restantes": 45,
           "pre_matriculados": 10,
-          "disponiveis": 35
+          "disponiveis": 45
         },
         {
           "turma": "EFII - Candeias Teen II- 9º Ano - Turma B - Manhã - Manhã",
@@ -1054,7 +1054,7 @@
           "matriculados": 32,
           "vagas_restantes": 13,
           "pre_matriculados": 10,
-          "disponiveis": 3
+          "disponiveis": 13
         },
         {
           "turma": "EFII - Candeias Teen II- 9º Ano - Turma c -Manhã - Manhã",
@@ -1078,7 +1078,7 @@
           "matriculados": 31,
           "vagas_restantes": 14,
           "pre_matriculados": 14,
-          "disponiveis": 0
+          "disponiveis": 14
         },
         {
           "turma": "EM- Candeias Teen II - 1º Ano Médio - Turma B Manhã - Manhã",
@@ -1102,7 +1102,7 @@
           "matriculados": 20,
           "vagas_restantes": 25,
           "pre_matriculados": 17,
-          "disponiveis": 8
+          "disponiveis": 25
         },
         {
           "turma": "EM- Candeias Teen II - 2º Ano Médio - Turma A - Manhã - Manhã",
@@ -1114,7 +1114,7 @@
           "matriculados": 20,
           "vagas_restantes": 25,
           "pre_matriculados": 12,
-          "disponiveis": 13
+          "disponiveis": 25
         },
         {
           "turma": "EM- Candeias Teen II - 2º Ano Médio - Turma B- Manhã - Manhã",
@@ -1138,7 +1138,7 @@
           "matriculados": 23,
           "vagas_restantes": 22,
           "pre_matriculados": 19,
-          "disponiveis": 3
+          "disponiveis": 22
         },
         {
           "turma": "EM- Candeias Teen II - 3º Ano Médio - Turma A Manhã - Manhã",
@@ -1150,7 +1150,7 @@
           "matriculados": 20,
           "vagas_restantes": 25,
           "pre_matriculados": 18,
-          "disponiveis": 7
+          "disponiveis": 25
         },
         {
           "turma": "EM- Candeias Teen II - 3º Ano Médio - Turma B Manhã - Manhã",
@@ -1162,7 +1162,7 @@
           "matriculados": 27,
           "vagas_restantes": 18,
           "pre_matriculados": 67,
-          "disponiveis": -49
+          "disponiveis": 18
         },
         {
           "turma": "EM- Candeias Teen II - 3º Ano Médio - Turma C Manhã - Manhã",
@@ -1174,7 +1174,7 @@
           "matriculados": 20,
           "vagas_restantes": 15,
           "pre_matriculados": 15,
-          "disponiveis": 0
+          "disponiveis": 15
         }
       ]
     },
@@ -1216,7 +1216,7 @@
           "matriculados": 14,
           "vagas_restantes": 1,
           "pre_matriculados": 1,
-          "disponiveis": 0
+          "disponiveis": 1
         },
         {
           "turma": "Infantil III - A T JANGA - Tarde",
@@ -1228,7 +1228,7 @@
           "matriculados": 10,
           "vagas_restantes": 5,
           "pre_matriculados": 2,
-          "disponiveis": 3
+          "disponiveis": 5
         },
         {
           "turma": "Infantil IV - A M JANGA - Manhã",
@@ -1240,7 +1240,7 @@
           "matriculados": 13,
           "vagas_restantes": 7,
           "pre_matriculados": 17,
-          "disponiveis": -10
+          "disponiveis": 7
         },
         {
           "turma": "Infantil IV - A T JANGA - Tarde",
@@ -1252,7 +1252,7 @@
           "matriculados": 3,
           "vagas_restantes": 17,
           "pre_matriculados": 1,
-          "disponiveis": 16
+          "disponiveis": 17
         },
         {
           "turma": "Infantil IV - B M JANGA - Manhã",
@@ -1276,7 +1276,7 @@
           "matriculados": 17,
           "vagas_restantes": 3,
           "pre_matriculados": 1,
-          "disponiveis": 2
+          "disponiveis": 3
         },
         {
           "turma": "Infantil V - A T JANGA - Tarde",
@@ -1300,7 +1300,7 @@
           "matriculados": 7,
           "vagas_restantes": 13,
           "pre_matriculados": 5,
-          "disponiveis": 8
+          "disponiveis": 13
         },
         {
           "turma": "1º Ano EF1 - A M JANGA - Manhã",
@@ -1312,7 +1312,7 @@
           "matriculados": 16,
           "vagas_restantes": 9,
           "pre_matriculados": 4,
-          "disponiveis": 5
+          "disponiveis": 9
         },
         {
           "turma": "1º Ano EF1 - A T JANGA - Tarde",
@@ -1324,7 +1324,7 @@
           "matriculados": 7,
           "vagas_restantes": 18,
           "pre_matriculados": 6,
-          "disponiveis": 12
+          "disponiveis": 18
         },
         {
           "turma": "2º Ano EF1 - A M JANGA - Manhã",
@@ -1336,7 +1336,7 @@
           "matriculados": 20,
           "vagas_restantes": 10,
           "pre_matriculados": 11,
-          "disponiveis": -1
+          "disponiveis": 10
         },
         {
           "turma": "2º Ano EF1 - B M JANGA - Manhã",
@@ -1360,7 +1360,7 @@
           "matriculados": 13,
           "vagas_restantes": 17,
           "pre_matriculados": 11,
-          "disponiveis": 6
+          "disponiveis": 17
         },
         {
           "turma": "3º Ano EF1 A M Janga- Turma A - Manhã",
@@ -1372,7 +1372,7 @@
           "matriculados": 29,
           "vagas_restantes": 1,
           "pre_matriculados": 15,
-          "disponiveis": -14
+          "disponiveis": 1
         },
         {
           "turma": "3º Ano EF1 A T Janga - Turma A - Tarde",
@@ -1384,7 +1384,7 @@
           "matriculados": 12,
           "vagas_restantes": 18,
           "pre_matriculados": 18,
-          "disponiveis": 0
+          "disponiveis": 18
         },
         {
           "turma": "4º Ano EF1 - A T Janga - Turma A - Tarde",
@@ -1396,7 +1396,7 @@
           "matriculados": 9,
           "vagas_restantes": 26,
           "pre_matriculados": 9,
-          "disponiveis": 17
+          "disponiveis": 26
         },
         {
           "turma": "4º Ano EF1 A M Janga - Turma A - Manhã",
@@ -1408,7 +1408,7 @@
           "matriculados": 21,
           "vagas_restantes": 14,
           "pre_matriculados": 7,
-          "disponiveis": 7
+          "disponiveis": 14
         },
         {
           "turma": "5º Ano EF1 - A M Janga - Turma A - Manhã",
@@ -1420,7 +1420,7 @@
           "matriculados": 26,
           "vagas_restantes": 9,
           "pre_matriculados": 11,
-          "disponiveis": -2
+          "disponiveis": 9
         },
         {
           "turma": "5º Ano EF1 - A T Janga - Turma A - Tarde",
@@ -1432,7 +1432,7 @@
           "matriculados": 11,
           "vagas_restantes": 24,
           "pre_matriculados": 10,
-          "disponiveis": 14
+          "disponiveis": 24
         },
         {
           "turma": "5º Ano EF1 - B M Janga - Turma B - Manhã",
@@ -1456,7 +1456,7 @@
           "matriculados": 24,
           "vagas_restantes": 21,
           "pre_matriculados": 14,
-          "disponiveis": 7
+          "disponiveis": 21
         },
         {
           "turma": "6º Ano A EF2 - T JANGA - Tarde",
@@ -1468,7 +1468,7 @@
           "matriculados": 16,
           "vagas_restantes": 29,
           "pre_matriculados": 4,
-          "disponiveis": 25
+          "disponiveis": 29
         },
         {
           "turma": "6º Ano B EF2 - M JANGA - Manhã",
@@ -1480,7 +1480,7 @@
           "matriculados": 28,
           "vagas_restantes": 7,
           "pre_matriculados": 17,
-          "disponiveis": -10
+          "disponiveis": 7
         },
         {
           "turma": "7º Ano A EF2 - M JANGA - Manhã",
@@ -1492,7 +1492,7 @@
           "matriculados": 33,
           "vagas_restantes": 12,
           "pre_matriculados": 32,
-          "disponiveis": -20
+          "disponiveis": 12
         },
         {
           "turma": "7º Ano A EF2 - T JANGA - Tarde",
@@ -1504,7 +1504,7 @@
           "matriculados": 6,
           "vagas_restantes": 39,
           "pre_matriculados": 15,
-          "disponiveis": 24
+          "disponiveis": 39
         },
         {
           "turma": "7º Ano B EF2 - M JANGA - Manhã",
@@ -1528,7 +1528,7 @@
           "matriculados": 39,
           "vagas_restantes": 41,
           "pre_matriculados": 24,
-          "disponiveis": 17
+          "disponiveis": 41
         },
         {
           "turma": "8º Ano A EF2 - T JANGA - Tarde",
@@ -1540,7 +1540,7 @@
           "matriculados": 15,
           "vagas_restantes": 30,
           "pre_matriculados": 12,
-          "disponiveis": 18
+          "disponiveis": 30
         },
         {
           "turma": "8º Ano B EF2 - M JANGA - Manhã",
@@ -1564,7 +1564,7 @@
           "matriculados": 31,
           "vagas_restantes": 14,
           "pre_matriculados": 33,
-          "disponiveis": -19
+          "disponiveis": 14
         },
         {
           "turma": "9º Ano EF2 - MB JANGA - Manhã",
@@ -1576,7 +1576,7 @@
           "matriculados": 14,
           "vagas_restantes": 31,
           "pre_matriculados": 9,
-          "disponiveis": 22
+          "disponiveis": 31
         },
         {
           "turma": "1ª série do Ensino Médio - A Manhã Janga - Manhã",
@@ -1588,7 +1588,7 @@
           "matriculados": 22,
           "vagas_restantes": 38,
           "pre_matriculados": 31,
-          "disponiveis": 7
+          "disponiveis": 38
         },
         {
           "turma": "1ª série do Ensino Médio - B Manhã Janga - Manhã",
@@ -1600,7 +1600,7 @@
           "matriculados": 24,
           "vagas_restantes": 36,
           "pre_matriculados": 23,
-          "disponiveis": 13
+          "disponiveis": 36
         },
         {
           "turma": "2ª série do Ensino Médio - A Manhã Janga - Manhã",
@@ -1612,7 +1612,7 @@
           "matriculados": 25,
           "vagas_restantes": 20,
           "pre_matriculados": 1,
-          "disponiveis": 19
+          "disponiveis": 20
         },
         {
           "turma": "2ª série do Ensino Médio - B Manhã Janga - Manhã",
@@ -1678,7 +1678,7 @@
           "matriculados": 15,
           "vagas_restantes": 10,
           "pre_matriculados": 3,
-          "disponiveis": 7
+          "disponiveis": 10
         },
         {
           "turma": "Infantil III - Turma A Tarde - Cordeiro - Tarde",
@@ -1702,7 +1702,7 @@
           "matriculados": 16,
           "vagas_restantes": 9,
           "pre_matriculados": 6,
-          "disponiveis": 3
+          "disponiveis": 9
         },
         {
           "turma": "Infantil IV - Turma A Tarde - Cordeiro - Tarde",
@@ -1738,7 +1738,7 @@
           "matriculados": 14,
           "vagas_restantes": 11,
           "pre_matriculados": 3,
-          "disponiveis": 8
+          "disponiveis": 11
         },
         {
           "turma": "Infantil V - Turma A Tarde - Cordeiro - Tarde",
@@ -1762,7 +1762,7 @@
           "matriculados": 9,
           "vagas_restantes": 16,
           "pre_matriculados": 3,
-          "disponiveis": 13
+          "disponiveis": 16
         },
         {
           "turma": "1º Ano - Turma A Manhã - Cordeiro - Manhã",
@@ -1774,7 +1774,7 @@
           "matriculados": 21,
           "vagas_restantes": 4,
           "pre_matriculados": 1,
-          "disponiveis": 3
+          "disponiveis": 4
         },
         {
           "turma": "1º Ano - Turma A Tarde - Cordeiro - Tarde",
@@ -1798,7 +1798,7 @@
           "matriculados": 15,
           "vagas_restantes": 10,
           "pre_matriculados": 2,
-          "disponiveis": 8
+          "disponiveis": 10
         },
         {
           "turma": "2º Ano - Turma A Manhã - Cordeiro - Manhã",
@@ -1810,7 +1810,7 @@
           "matriculados": 16,
           "vagas_restantes": 14,
           "pre_matriculados": 6,
-          "disponiveis": 8
+          "disponiveis": 14
         },
         {
           "turma": "2º Ano - Turma A Tarde - Cordeiro - Tarde",
@@ -1834,7 +1834,7 @@
           "matriculados": 16,
           "vagas_restantes": 14,
           "pre_matriculados": 10,
-          "disponiveis": 4
+          "disponiveis": 14
         },
         {
           "turma": "3º Ano - Turma A Manhã - Cordeiro - Manhã",
@@ -1846,7 +1846,7 @@
           "matriculados": 12,
           "vagas_restantes": 18,
           "pre_matriculados": 10,
-          "disponiveis": 8
+          "disponiveis": 18
         },
         {
           "turma": "3º Ano - Turma A Tarde - Cordeiro - Tarde",
@@ -1870,7 +1870,7 @@
           "matriculados": 16,
           "vagas_restantes": 14,
           "pre_matriculados": 4,
-          "disponiveis": 10
+          "disponiveis": 14
         },
         {
           "turma": "4 ºAno - Turma A Tarde - Cordeiro - Manhã",
@@ -1894,7 +1894,7 @@
           "matriculados": 17,
           "vagas_restantes": 18,
           "pre_matriculados": 6,
-          "disponiveis": 12
+          "disponiveis": 18
         },
         {
           "turma": "4º Ano - Turma B Manhã - Cordeiro - Manhã",
@@ -1906,7 +1906,7 @@
           "matriculados": 21,
           "vagas_restantes": 14,
           "pre_matriculados": 1,
-          "disponiveis": 13
+          "disponiveis": 14
         },
         {
           "turma": "5º Ano - Turma A Manhã - Cordeiro - Manhã",
@@ -1918,7 +1918,7 @@
           "matriculados": 24,
           "vagas_restantes": 11,
           "pre_matriculados": 8,
-          "disponiveis": 3
+          "disponiveis": 11
         },
         {
           "turma": "5º Ano - Turma A Tarde - Cordeiro - Tarde",
@@ -1942,7 +1942,7 @@
           "matriculados": 24,
           "vagas_restantes": 11,
           "pre_matriculados": 7,
-          "disponiveis": 4
+          "disponiveis": 11
         },
         {
           "turma": "6º Ano - Turma A Manhã - Cordeiro - Manhã",
@@ -1954,7 +1954,7 @@
           "matriculados": 30,
           "vagas_restantes": 10,
           "pre_matriculados": 6,
-          "disponiveis": 4
+          "disponiveis": 10
         },
         {
           "turma": "6º Ano - Turma B Manhã - Cordeiro - Manhã",
@@ -1966,7 +1966,7 @@
           "matriculados": 20,
           "vagas_restantes": 20,
           "pre_matriculados": 12,
-          "disponiveis": 8
+          "disponiveis": 20
         },
         {
           "turma": "6º Ano - Turma C Manhã - Cordeiro - Manhã",
@@ -2002,7 +2002,7 @@
           "matriculados": 64,
           "vagas_restantes": -24,
           "pre_matriculados": 40,
-          "disponiveis": -64
+          "disponiveis": -24
         },
         {
           "turma": "7º Ano - Turma A Tarde - Cordeiro - Tarde",
@@ -2026,7 +2026,7 @@
           "matriculados": 25,
           "vagas_restantes": 15,
           "pre_matriculados": 18,
-          "disponiveis": -3
+          "disponiveis": 15
         },
         {
           "turma": "8º Ano - Turma A Tarde - Cordeiro - Tarde",
@@ -2062,7 +2062,7 @@
           "matriculados": 62,
           "vagas_restantes": -22,
           "pre_matriculados": 28,
-          "disponiveis": -50
+          "disponiveis": -22
         },
         {
           "turma": "9º Ano - Turma A Tarde - Cordeiro - Tarde",
@@ -2086,7 +2086,7 @@
           "matriculados": 31,
           "vagas_restantes": 17,
           "pre_matriculados": 28,
-          "disponiveis": -11
+          "disponiveis": 17
         },
         {
           "turma": "2ª série do Ensino Médio - A Manhã - Cordeiro - Manhã",
@@ -2098,7 +2098,7 @@
           "matriculados": 38,
           "vagas_restantes": 10,
           "pre_matriculados": 10,
-          "disponiveis": 0
+          "disponiveis": 10
         },
         {
           "turma": "3ª série do Ensino Médio - A Manhã - Cordeiro - Manhã",
@@ -2110,7 +2110,7 @@
           "matriculados": 10,
           "vagas_restantes": 40,
           "pre_matriculados": 18,
-          "disponiveis": 22
+          "disponiveis": 40
         }
       ]
     }
