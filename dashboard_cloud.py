@@ -635,16 +635,17 @@ for i, tab in enumerate(tabs):
 
             # Função para colorir status
             def colorir_status(val):
+                base_style = 'font-weight: 600; font-family: "SF Pro Display", "Segoe UI", system-ui, sans-serif; letter-spacing: 0.5px; text-transform: uppercase; font-size: 11px;'
                 if 'Excelente' in val:
-                    return 'color: #22c55e; font-weight: bold;'
+                    return f'{base_style} color: #22c55e;'
                 elif 'Muito Bom' in val:
-                    return 'color: #84cc16; font-weight: bold;'
+                    return f'{base_style} color: #84cc16;'
                 elif 'Bom' in val:
-                    return 'color: #fbbf24; font-weight: bold;'
+                    return f'{base_style} color: #fbbf24;'
                 elif 'Atenção' in val:
-                    return 'color: #f97316; font-weight: bold;'
+                    return f'{base_style} color: #f97316;'
                 else:
-                    return 'color: #ef4444; font-weight: bold;'
+                    return f'{base_style} color: #ef4444;'
 
             styled_df = df_turmas.style.map(barra_ocupacao, subset=['Ocupação %']).map(colorir_status, subset=['Status'])
             st.dataframe(styled_df, use_container_width=True, hide_index=True)
