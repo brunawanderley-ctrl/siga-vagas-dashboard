@@ -8,6 +8,7 @@ import subprocess
 import os
 from pathlib import Path
 from datetime import datetime
+from io import BytesIO
 
 # Configuração da página
 st.set_page_config(
@@ -324,12 +325,231 @@ with col_btn:
 
 # Info bar
 st.markdown(f"""
-    <div style='display: flex; gap: 2rem; color: #64748b; font-size: 0.85rem; margin-bottom: 2rem;'>
+    <div style='display: flex; gap: 2rem; color: #64748b; font-size: 0.85rem; margin-bottom: 1rem;'>
         <span>📅 Última atualização: <strong style='color: #94a3b8;'>{resumo['data_extracao'][:16].replace('T', ' ')}</strong></span>
         <span>📊 Período: <strong style='color: #94a3b8;'>{resumo['periodo']}</strong></span>
         <span>🔢 Extrações: <strong style='color: #94a3b8;'>{num_extracoes}</strong></span>
     </div>
 """, unsafe_allow_html=True)
+
+# Botões de Download
+col_dl1, col_dl2, col_dl3 = st.columns([1, 1, 4])
+
+# Gerar Excel
+def gerar_excel():
+    output = BytesIO()
+    with pd.ExcelWriter(output, engine='openpyxl') as writer:
+        # Resumo Geral
+        df_resumo = pd.DataFrame([{
+            'Métrica': 'Ocupação',
+            'Valor': f"{round(resumo['total_geral']['matriculados'] / resumo['total_geral']['vagas'] * 100, 1)}%"
+        }, {
+            'Métrica': 'Matriculados',
+            'Valor': resumo['total_geral']['matriculados']
+        }, {
+            'Métrica': 'Vagas Totais',
+            'Valor': resumo['total_geral']['vagas']
+        }, {
+            'Métrica': 'Disponíveis',
+            'Valor': resumo['total_geral']['vagas'] - resumo['total_geral']['matriculados']
+        }, {
+            'Métrica': 'Novatos',
+            'Valor': resumo['total_geral']['novatos']
+        }, {
+            'Métrica': 'Veteranos',
+            'Valor': resumo['total_geral']['veteranos']
+        }])
+        df_resumo.to_excel(writer, sheet_name='Resumo Geral', index=False)
+
+        # Por Unidade
+        dados_unidades = []
+        for unidade in resumo['unidades']:
+            nome = unidade['nome'].split('(')[1].replace(')', '') if '(' in unidade['nome'] else unidade['nome']
+            t = unidade['total']
+            ocup = round(t['matriculados'] / t['vagas'] * 100, 1)
+            dados_unidades.append({
+                'Unidade': nome,
+                'Vagas': t['vagas'],
+                'Novatos': t['novatos'],
+                'Veteranos': t['veteranos'],
+                'Matriculados': t['matriculados'],
+                'Disponíveis': t['vagas'] - t['matriculados'],
+                'Ocupação %': ocup
+            })
+        pd.DataFrame(dados_unidades).to_excel(writer, sheet_name='Por Unidade', index=False)
+
+        # Todas as Turmas
+        todas_turmas = []
+        for unidade in vagas['unidades']:
+            nome_unidade = unidade['nome'].split('(')[1].replace(')', '') if '(' in unidade['nome'] else unidade['nome']
+            for turma in unidade['turmas']:
+                ocup = round(turma['matriculados'] / turma['vagas'] * 100, 1) if turma['vagas'] > 0 else 0
+                todas_turmas.append({
+                    'Unidade': nome_unidade,
+                    'Segmento': turma['segmento'],
+                    'Turma': turma['turma'],
+                    'Vagas': turma['vagas'],
+                    'Novatos': turma['novatos'],
+                    'Veteranos': turma['veteranos'],
+                    'Matriculados': turma['matriculados'],
+                    'Disponíveis': turma['vagas'] - turma['matriculados'],
+                    'Pré-Matr.': turma['pre_matriculados'],
+                    'Ocupação %': ocup
+                })
+        pd.DataFrame(todas_turmas).to_excel(writer, sheet_name='Todas as Turmas', index=False)
+
+    return output.getvalue()
+
+# Gerar PDF (HTML para impressão)
+def gerar_pdf_html():
+    html = f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Relatório de Vagas - Colégio Elo</title>
+        <style>
+            body {{ font-family: Arial, sans-serif; margin: 40px; color: #333; }}
+            h1 {{ color: #1e4976; border-bottom: 2px solid #2563eb; padding-bottom: 10px; }}
+            h2 {{ color: #2563eb; margin-top: 30px; }}
+            table {{ border-collapse: collapse; width: 100%; margin: 20px 0; }}
+            th, td {{ border: 1px solid #ddd; padding: 10px; text-align: center; }}
+            th {{ background-color: #1e4976; color: white; }}
+            tr:nth-child(even) {{ background-color: #f9f9f9; }}
+            .metric {{ display: inline-block; margin: 10px 20px; text-align: center; }}
+            .metric-value {{ font-size: 28px; font-weight: bold; color: #2563eb; }}
+            .metric-label {{ font-size: 12px; color: #666; text-transform: uppercase; }}
+            .footer {{ margin-top: 40px; text-align: center; color: #888; font-size: 12px; }}
+            @media print {{ body {{ margin: 20px; }} }}
+        </style>
+    </head>
+    <body>
+        <h1>📊 Relatório de Vagas - Colégio Elo</h1>
+        <p><strong>Data:</strong> {resumo['data_extracao'][:16].replace('T', ' ')} | <strong>Período:</strong> {resumo['periodo']}</p>
+
+        <div style="background: #f0f4f8; padding: 20px; border-radius: 10px; margin: 20px 0;">
+            <div class="metric">
+                <div class="metric-value">{round(resumo['total_geral']['matriculados'] / resumo['total_geral']['vagas'] * 100, 1)}%</div>
+                <div class="metric-label">Ocupação</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">{resumo['total_geral']['matriculados']}</div>
+                <div class="metric-label">Matriculados</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">{resumo['total_geral']['vagas']}</div>
+                <div class="metric-label">Vagas</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">{resumo['total_geral']['vagas'] - resumo['total_geral']['matriculados']}</div>
+                <div class="metric-label">Disponíveis</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">{resumo['total_geral']['novatos']}</div>
+                <div class="metric-label">Novatos</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">{resumo['total_geral']['veteranos']}</div>
+                <div class="metric-label">Veteranos</div>
+            </div>
+        </div>
+
+        <h2>Por Unidade</h2>
+        <table>
+            <tr>
+                <th>Unidade</th>
+                <th>Vagas</th>
+                <th>Matriculados</th>
+                <th>Disponíveis</th>
+                <th>Ocupação</th>
+            </tr>
+    """
+
+    for unidade in resumo['unidades']:
+        nome = unidade['nome'].split('(')[1].replace(')', '') if '(' in unidade['nome'] else unidade['nome']
+        t = unidade['total']
+        ocup = round(t['matriculados'] / t['vagas'] * 100, 1)
+        html += f"""
+            <tr>
+                <td><strong>{nome}</strong></td>
+                <td>{t['vagas']}</td>
+                <td>{t['matriculados']}</td>
+                <td>{t['vagas'] - t['matriculados']}</td>
+                <td>{ocup}%</td>
+            </tr>
+        """
+
+    html += """
+        </table>
+
+        <h2>Por Segmento (Todas as Unidades)</h2>
+        <table>
+            <tr>
+                <th>Segmento</th>
+                <th>Vagas</th>
+                <th>Matriculados</th>
+                <th>Disponíveis</th>
+                <th>Ocupação</th>
+            </tr>
+    """
+
+    # Agrupa por segmento
+    segmentos_totais = {}
+    for unidade in resumo['unidades']:
+        for seg, vals in unidade['segmentos'].items():
+            if seg not in segmentos_totais:
+                segmentos_totais[seg] = {'vagas': 0, 'matriculados': 0}
+            segmentos_totais[seg]['vagas'] += vals['vagas']
+            segmentos_totais[seg]['matriculados'] += vals['matriculados']
+
+    for seg in ['Ed. Infantil', 'Fund. I', 'Fund. II', 'Ens. Médio']:
+        if seg in segmentos_totais:
+            v = segmentos_totais[seg]
+            ocup = round(v['matriculados'] / v['vagas'] * 100, 1) if v['vagas'] > 0 else 0
+            html += f"""
+                <tr>
+                    <td><strong>{seg}</strong></td>
+                    <td>{v['vagas']}</td>
+                    <td>{v['matriculados']}</td>
+                    <td>{v['vagas'] - v['matriculados']}</td>
+                    <td>{ocup}%</td>
+                </tr>
+            """
+
+    html += f"""
+        </table>
+
+        <div class="footer">
+            <p>Relatório gerado automaticamente pelo SIGA Vagas Dashboard</p>
+            <p>Colégio Elo © {datetime.now().year}</p>
+        </div>
+    </body>
+    </html>
+    """
+    return html
+
+with col_dl1:
+    excel_data = gerar_excel()
+    st.download_button(
+        label="📥 Excel",
+        data=excel_data,
+        file_name=f"vagas_colegio_elo_{datetime.now().strftime('%Y%m%d')}.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        use_container_width=True
+    )
+
+with col_dl2:
+    pdf_html = gerar_pdf_html()
+    st.download_button(
+        label="📄 Relatório",
+        data=pdf_html,
+        file_name=f"relatorio_vagas_{datetime.now().strftime('%Y%m%d')}.html",
+        mime="text/html",
+        use_container_width=True,
+        help="Abra o arquivo e use Ctrl+P para imprimir como PDF"
+    )
+
+st.markdown("<br>", unsafe_allow_html=True)
 
 # Métricas principais
 total = resumo['total_geral']
