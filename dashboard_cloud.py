@@ -602,9 +602,25 @@ for i, tab in enumerate(tabs):
 
         with st.expander("📋 Ver todas as turmas"):
             df_turmas = pd.DataFrame(unidade_vagas['turmas'])
-            df_turmas = df_turmas[['segmento', 'turma', 'vagas', 'matriculados', 'disponiveis']]
-            df_turmas.columns = ['Segmento', 'Turma', 'Vagas', 'Matr.', 'Disp.']
-            st.dataframe(df_turmas, use_container_width=True, hide_index=True)
+            df_turmas = df_turmas[['segmento', 'turma', 'vagas', 'novatos', 'veteranos', 'matriculados', 'disponiveis']]
+            df_turmas['ocupacao'] = round(df_turmas['matriculados'] / df_turmas['vagas'] * 100, 1)
+            df_turmas.columns = ['Segmento', 'Turma', 'Vagas', 'Novatos', 'Veteranos', 'Matriculados', 'Disponíveis', 'Ocupação %']
+
+            # Função para colorir ocupação
+            def colorir_ocupacao(val):
+                if val >= 90:
+                    return 'background-color: #22c55e; color: white'
+                elif val >= 80:
+                    return 'background-color: #84cc16; color: white'
+                elif val >= 70:
+                    return 'background-color: #fbbf24; color: black'
+                elif val >= 60:
+                    return 'background-color: #f97316; color: white'
+                else:
+                    return 'background-color: #ef4444; color: white'
+
+            styled_df = df_turmas.style.applymap(colorir_ocupacao, subset=['Ocupação %'])
+            st.dataframe(styled_df, use_container_width=True, hide_index=True)
 
 # Footer
 st.markdown("<br><br>", unsafe_allow_html=True)
