@@ -335,7 +335,7 @@ st.markdown(f"""
 total = resumo['total_geral']
 ocupacao = round(total['matriculados'] / total['vagas'] * 100, 1)
 
-col1, col2, col3, col4, col5 = st.columns(5)
+col1, col2, col3, col4, col5, col6 = st.columns(6)
 
 with col1:
     st.metric("OCUPAÇÃO", f"{ocupacao}%", delta=None)
@@ -347,6 +347,8 @@ with col4:
     st.metric("DISPONÍVEIS", f"{total['disponiveis']:,}".replace(",", "."))
 with col5:
     st.metric("NOVATOS", f"{total['novatos']:,}".replace(",", "."))
+with col6:
+    st.metric("VETERANOS", f"{total['veteranos']:,}".replace(",", "."))
 
 st.markdown("<br>", unsafe_allow_html=True)
 
@@ -602,7 +604,54 @@ def colorir_status_seg(val):
     else: return f'{base_style} color: #ef4444;'
 
 styled_seg = df_segmentos.style.map(barra_ocupacao_seg, subset=['Ocupação %']).map(colorir_status_seg, subset=['Status'])
-st.dataframe(styled_seg, use_container_width=True, hide_index=True)
+
+col_tabela, col_grafico = st.columns([2, 1])
+
+with col_tabela:
+    st.dataframe(styled_seg, use_container_width=True, hide_index=True)
+
+with col_grafico:
+    # Gráfico de Status
+    status_counts = df_segmentos['Status'].value_counts()
+    cores_status = {
+        '🔥 Excelente': '#22c55e',
+        '✨ Muito Bom': '#84cc16',
+        '⚡ Bom': '#fbbf24',
+        '⚠️ Atenção': '#f97316',
+        '❄️ Crítico': '#ef4444'
+    }
+
+    fig_status = go.Figure(data=[go.Pie(
+        labels=status_counts.index,
+        values=status_counts.values,
+        hole=0.5,
+        marker_colors=[cores_status.get(s, '#94a3b8') for s in status_counts.index],
+        textinfo='label+value',
+        textfont=dict(size=12, color='white')
+    )])
+
+    fig_status.update_layout(
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(color='#94a3b8'),
+        showlegend=False,
+        height=250,
+        margin=dict(t=30, b=10, l=10, r=10),
+        title=dict(text='Status por Segmento', font=dict(color='#ffffff', size=14))
+    )
+
+    st.plotly_chart(fig_status, use_container_width=True)
+
+# Legenda de Status destacada
+st.markdown("""
+    <div style='display: flex; justify-content: center; gap: 1.5rem; padding: 1rem; background: rgba(15, 33, 55, 0.5); border-radius: 12px; margin: 1rem 0;'>
+        <span style='color: #22c55e; font-weight: 600;'>🔥 EXCELENTE (90-100%)</span>
+        <span style='color: #84cc16; font-weight: 600;'>✨ MUITO BOM (80-89%)</span>
+        <span style='color: #fbbf24; font-weight: 600;'>⚡ BOM (70-79%)</span>
+        <span style='color: #f97316; font-weight: 600;'>⚠️ ATENÇÃO (50-69%)</span>
+        <span style='color: #ef4444; font-weight: 600;'>❄️ CRÍTICO (&lt;50%)</span>
+    </div>
+""", unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
