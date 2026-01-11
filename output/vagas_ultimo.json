@@ -1,5 +1,5 @@
 {
-  "data_extracao": "2026-01-11T11:58:54.222621",
+  "data_extracao": "2026-01-11T13:21:47.808444",
   "periodo": "2026",
   "unidades": [
     {
@@ -223,7 +223,7 @@
           "disponiveis": 14
         },
         {
-          "turma": "2º Ano - Turma B Tarde - Boa Viagem - Tarde",
+          "turma": "2º Ano - Turma B Tarde - Tarde",
           "curso": "1- BV - Ensino Fundamental I - Unidade Boa Viagem / 2º Ano / 2026",
           "segmento": "Fund. I",
           "vagas": 25,
@@ -235,7 +235,7 @@
           "disponiveis": 10
         },
         {
-          "turma": "3º Ano - Turma A Manhã - Boa Viagem - Manhã",
+          "turma": "3º Ano - Turma A Manhã - Manhã",
           "curso": "1- BV - Ensino Fundamental I - Unidade Boa Viagem / 3º Ano / 2026",
           "segmento": "Fund. I",
           "vagas": 30,
@@ -247,7 +247,7 @@
           "disponiveis": 22
         },
         {
-          "turma": "3º Ano - Turma A Tarde - Boa Viagem - Tarde",
+          "turma": "3º Ano - Turma A Tarde - Tarde",
           "curso": "1- BV - Ensino Fundamental I - Unidade Boa Viagem / 3º Ano / 2026",
           "segmento": "Fund. I",
           "vagas": 30,
@@ -259,7 +259,7 @@
           "disponiveis": 25
         },
         {
-          "turma": "3º Ano - Turma B Manhã - Boa Viagem - Manhã",
+          "turma": "3º Ano - Turma B Manhã - Manhã",
           "curso": "1- BV - Ensino Fundamental I - Unidade Boa Viagem / 3º Ano / 2026",
           "segmento": "Fund. I",
           "vagas": 30,
@@ -271,16 +271,16 @@
           "disponiveis": 16
         },
         {
-          "turma": "3º Ano - Turma B Tarde - Boa Viagem - Tarde",
+          "turma": "3º Ano - Turma B Tarde - Tarde",
           "curso": "1- BV - Ensino Fundamental I - Unidade Boa Viagem / 3º Ano / 2026",
           "segmento": "Fund. I",
-          "vagas": 0,
+          "vagas": 25,
           "novatos": 1,
           "veteranos": 10,
           "matriculados": 11,
-          "vagas_restantes": -11,
+          "vagas_restantes": 14,
           "pre_matriculados": 7,
-          "disponiveis": -11
+          "disponiveis": 14
         },
         {
           "turma": "4 ºAno - Turma B Manhã - Boa Viagem - Manhã",
@@ -293,18 +293,6 @@
           "vagas_restantes": 24,
           "pre_matriculados": 13,
           "disponiveis": 24
-        },
-        {
-          "turma": "4 ºAno - Turma C Manhã - Boa Viagem - Manhã",
-          "curso": "1- BV - Ensino Fundamental I - Unidade Boa Viagem / 4º Ano / 2026",
-          "segmento": "Fund. I",
-          "vagas": 0,
-          "novatos": 0,
-          "veteranos": 0,
-          "matriculados": 0,
-          "vagas_restantes": 0,
-          "pre_matriculados": 0,
-          "disponiveis": 0
         },
         {
           "turma": "4º Ano - Turma A Manhã - Boa Viagem - Manhã",

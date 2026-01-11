@@ -1,5 +1,5 @@
 {
-  "data_extracao": "2026-01-11T11:58:54.222621",
+  "data_extracao": "2026-01-11T13:21:47.808444",
   "periodo": "2026",
   "unidades": [
     {
@@ -14,11 +14,11 @@
           "disponiveis": 164
         },
         "Fund. I": {
-          "vagas": 520,
+          "vagas": 545,
           "novatos": 43,
           "veteranos": 183,
           "matriculados": 226,
-          "disponiveis": 294
+          "disponiveis": 319
         },
         "Fund. II": {
           "vagas": 561,
@@ -36,11 +36,11 @@
         }
       },
       "total": {
-        "vagas": 1651,
+        "vagas": 1676,
         "novatos": 149,
         "veteranos": 593,
         "matriculados": 742,
-        "disponiveis": 909
+        "disponiveis": 934
       }
     },
     {
@@ -168,10 +168,10 @@
     }
   ],
   "total_geral": {
-    "vagas": 5889,
+    "vagas": 5914,
     "novatos": 674,
     "veteranos": 1993,
     "matriculados": 2667,
-    "disponiveis": 3222
+    "disponiveis": 3247
   }
 }
