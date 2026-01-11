@@ -225,7 +225,7 @@ def get_ocupacao_color(ocupacao):
         return COLORS['warm']      # Verde claro
     elif ocupacao >= 70:
         return COLORS['mild']      # Amarelo
-    elif ocupacao >= 60:
+    elif ocupacao >= 50:
         return COLORS['cool']      # Laranja
     else:
         return COLORS['cold']      # Vermelho (crítico)
@@ -360,8 +360,8 @@ with col_left:
             <span style='color: #22c55e;'>🔥 90-100% Excelente</span>
             <span style='color: #84cc16;'>✨ 80-89% Muito Bom</span>
             <span style='color: #fbbf24;'>⚡ 70-79% Bom</span>
-            <span style='color: #f97316;'>⚠️ 60-69% Atenção</span>
-            <span style='color: #ef4444;'>❄️ &lt;60% Crítico</span>
+            <span style='color: #f97316;'>⚠️ 50-69% Atenção</span>
+            <span style='color: #ef4444;'>❄️ &lt;50% Crítico</span>
         </div>
     """, unsafe_allow_html=True)
 
@@ -610,7 +610,7 @@ for i, tab in enumerate(tabs):
                 if ocup >= 90: return '🔥 Excelente'
                 elif ocup >= 80: return '✨ Muito Bom'
                 elif ocup >= 70: return '⚡ Bom'
-                elif ocup >= 60: return '⚠️ Atenção'
+                elif ocup >= 50: return '⚠️ Atenção'
                 else: return '❄️ Crítico'
 
             df_turmas['status'] = df_turmas['ocupacao'].apply(get_status)
@@ -627,7 +627,7 @@ for i, tab in enumerate(tabs):
                     cor = '#84cc16'
                 elif val >= 70:
                     cor = '#fbbf24'
-                elif val >= 60:
+                elif val >= 50:
                     cor = '#f97316'
                 else:
                     cor = '#ef4444'
