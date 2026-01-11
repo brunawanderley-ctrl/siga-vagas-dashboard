@@ -2070,7 +2070,7 @@ if turmas_criticas or turmas_lotadas:
                 """, unsafe_allow_html=True)
             st.markdown("</div>", unsafe_allow_html=True)
         else:
-            st.markdown(f"""
+            st.markdown("""
                 <div style='background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3);
                             border-radius: 12px; padding: 1rem; text-align: center;'>
                     <span style='color: #22c55e; font-size: 1.2rem;'>✅ Nenhuma turma crítica!</span>
