@@ -538,6 +538,74 @@ if num_extracoes >= 2:
 
 st.markdown("<br>", unsafe_allow_html=True)
 
+# Análise por Segmento
+st.markdown("### 📊 Análise por Segmento")
+
+col_select, col_empty = st.columns([1, 2])
+with col_select:
+    unidades_nomes = [u['nome'].split('(')[1].replace(')', '') if '(' in u['nome'] else u['nome'] for u in resumo['unidades']]
+    unidade_selecionada = st.selectbox("Selecione a Unidade", unidades_nomes, key="seg_unidade")
+
+# Encontra índice da unidade selecionada
+idx_unidade = unidades_nomes.index(unidade_selecionada)
+unidade_dados = resumo['unidades'][idx_unidade]
+unidade_vagas_seg = vagas['unidades'][idx_unidade]
+
+# Monta dados por segmento
+segmentos_data = []
+for seg, vals in unidade_dados['segmentos'].items():
+    # Calcula pré-matriculados do segmento
+    pre_matr_seg = sum(t['pre_matriculados'] for t in unidade_vagas_seg['turmas'] if t['segmento'] == seg)
+    disponíveis = vals['vagas'] - vals['matriculados']
+    ocup_seg = round(vals['matriculados'] / vals['vagas'] * 100, 1) if vals['vagas'] > 0 else 0
+
+    if ocup_seg >= 90: status = '🔥 Excelente'
+    elif ocup_seg >= 80: status = '✨ Muito Bom'
+    elif ocup_seg >= 70: status = '⚡ Bom'
+    elif ocup_seg >= 50: status = '⚠️ Atenção'
+    else: status = '❄️ Crítico'
+
+    segmentos_data.append({
+        'Segmento': seg,
+        'Vagas': vals['vagas'],
+        'Novatos': vals['novatos'],
+        'Veteranos': vals['veteranos'],
+        'Matriculados': vals['matriculados'],
+        'Disponíveis': disponíveis,
+        'Ocupação %': ocup_seg,
+        'Status': status,
+        'Pré-Matr.': pre_matr_seg
+    })
+
+df_segmentos = pd.DataFrame(segmentos_data)
+
+# Ordena por segmento
+ordem_seg = {'Ed. Infantil': 0, 'Fund. I': 1, 'Fund. II': 2, 'Ens. Médio': 3}
+df_segmentos['ordem'] = df_segmentos['Segmento'].map(ordem_seg)
+df_segmentos = df_segmentos.sort_values('ordem').drop('ordem', axis=1)
+
+# Estilização
+def barra_ocupacao_seg(val):
+    if val >= 90: cor = '#22c55e'
+    elif val >= 80: cor = '#84cc16'
+    elif val >= 70: cor = '#fbbf24'
+    elif val >= 50: cor = '#f97316'
+    else: cor = '#ef4444'
+    return f'background: linear-gradient(90deg, {cor} {val}%, transparent {val}%); color: white; font-weight: bold;'
+
+def colorir_status_seg(val):
+    base_style = 'font-weight: 600; font-family: "SF Pro Display", "Segoe UI", system-ui, sans-serif; letter-spacing: 0.5px; text-transform: uppercase; font-size: 11px;'
+    if 'Excelente' in val: return f'{base_style} color: #22c55e;'
+    elif 'Muito Bom' in val: return f'{base_style} color: #84cc16;'
+    elif 'Bom' in val: return f'{base_style} color: #fbbf24;'
+    elif 'Atenção' in val: return f'{base_style} color: #f97316;'
+    else: return f'{base_style} color: #ef4444;'
+
+styled_seg = df_segmentos.style.map(barra_ocupacao_seg, subset=['Ocupação %']).map(colorir_status_seg, subset=['Status'])
+st.dataframe(styled_seg, use_container_width=True, hide_index=True)
+
+st.markdown("<br>", unsafe_allow_html=True)
+
 # Detalhamento por unidade
 st.markdown("### 🏫 Detalhamento por Unidade")
 
