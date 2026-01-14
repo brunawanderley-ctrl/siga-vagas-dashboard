@@ -814,7 +814,12 @@ with col_title:
 
 with col_btn:
     st.write("")
-    if st.button("🔄 Atualizar", use_container_width=True):
+    # Detecta se está no Streamlit Cloud
+    is_cloud = os.environ.get("STREAMLIT_SHARING_MODE") or os.environ.get("STREAMLIT_SERVER_HEADLESS")
+
+    if is_cloud:
+        st.button("🔄 Atualizar", use_container_width=True, disabled=True, help="Atualização disponível apenas na versão local")
+    elif st.button("🔄 Atualizar", use_container_width=True):
         status_container = st.empty()
         status_container.info("⏳ Iniciando extração do SIGA...")
 
