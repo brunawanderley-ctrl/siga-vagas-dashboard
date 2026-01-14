@@ -814,55 +814,58 @@ with col_title:
 
 with col_btn:
     st.write("")
-    # Detecta se está no Streamlit Cloud
-    is_cloud = os.environ.get("STREAMLIT_SHARING_MODE") or os.environ.get("STREAMLIT_SERVER_HEADLESS")
+    # Detecta se está no Streamlit Cloud (não tem venv nem extrator)
+    extrator_script = BASE_DIR / "extrair_vagas.py"
+    venv_exists = (BASE_DIR / "venv").exists()
+    is_cloud = not venv_exists or not extrator_script.exists()
 
-    if is_cloud:
-        st.button("🔄 Atualizar", use_container_width=True, disabled=True, help="Atualização disponível apenas na versão local")
-    elif st.button("🔄 Atualizar", use_container_width=True):
-        status_container = st.empty()
-        status_container.info("⏳ Iniciando extração do SIGA...")
+    if st.button("🔄 Atualizar", use_container_width=True):
+        if is_cloud:
+            st.warning("⚠️ Atualização disponível apenas na versão local. Este dashboard online exibe dados estáticos.")
+        else:
+            status_container = st.empty()
+            status_container.info("⏳ Iniciando extração do SIGA...")
 
-        try:
-            # Tenta encontrar o Python do venv
-            venv_python = BASE_DIR / "venv" / "bin" / "python"
-            if not venv_python.exists():
-                venv_python = "python3"  # Fallback para python do sistema
+            try:
+                # Tenta encontrar o Python do venv
+                venv_python = BASE_DIR / "venv" / "bin" / "python"
+                if not venv_python.exists():
+                    venv_python = "python3"  # Fallback para python do sistema
 
-            extrator_script = BASE_DIR / "extrair_vagas.py"
+                extrator_script = BASE_DIR / "extrair_vagas.py"
 
-            if not extrator_script.exists():
-                status_container.error(f"Script não encontrado: {extrator_script}")
-            else:
-                status_container.info("⏳ Extraindo dados do SIGA... (pode levar alguns minutos)")
-
-                result = subprocess.run(
-                    [str(venv_python), str(extrator_script)],
-                    capture_output=True,
-                    text=True,
-                    timeout=600,
-                    cwd=str(BASE_DIR),
-                    env={**os.environ, "PYTHONUNBUFFERED": "1"}
-                )
-
-                if result.returncode == 0:
-                    status_container.success("✅ Dados atualizados com sucesso!")
-                    st.cache_data.clear()
-                    import time
-                    time.sleep(1)
-                    st.rerun()
+                if not extrator_script.exists():
+                    status_container.error(f"Script não encontrado: {extrator_script}")
                 else:
-                    status_container.error(f"❌ Erro na extração")
-                    with st.expander("Ver detalhes do erro"):
-                        st.code(result.stderr or result.stdout or "Sem detalhes")
+                    status_container.info("⏳ Extraindo dados do SIGA... (pode levar alguns minutos)")
 
-        except subprocess.TimeoutExpired:
-            status_container.error("⏰ Timeout: extração demorou mais de 10 minutos")
-        except Exception as e:
-            status_container.error(f"❌ Erro: {str(e)}")
-            with st.expander("Ver detalhes"):
-                import traceback
-                st.code(traceback.format_exc())
+                    result = subprocess.run(
+                        [str(venv_python), str(extrator_script)],
+                        capture_output=True,
+                        text=True,
+                        timeout=600,
+                        cwd=str(BASE_DIR),
+                        env={**os.environ, "PYTHONUNBUFFERED": "1"}
+                    )
+
+                    if result.returncode == 0:
+                        status_container.success("✅ Dados atualizados com sucesso!")
+                        st.cache_data.clear()
+                        import time
+                        time.sleep(1)
+                        st.rerun()
+                    else:
+                        status_container.error(f"❌ Erro na extração")
+                        with st.expander("Ver detalhes do erro"):
+                            st.code(result.stderr or result.stdout or "Sem detalhes")
+
+            except subprocess.TimeoutExpired:
+                status_container.error("⏰ Timeout: extração demorou mais de 10 minutos")
+            except Exception as e:
+                status_container.error(f"❌ Erro: {str(e)}")
+                with st.expander("Ver detalhes"):
+                    import traceback
+                    st.code(traceback.format_exc())
 
 # Info bar
 st.markdown(f"""
